@@ -2,18 +2,23 @@
 #include <SPI.h>
 #include <MPU9250.h>
 #include <QueueArray.h>
+//#include <ws2812.h>
+#include <StopWatch.h>
 
-
-#define WAITFORINPUT(){            \
-	while(!Serial.available()){};  \
-	while(Serial.available()){     \
-		Serial.read();             \
-	};                             \
-}                                  \
 
 #define SPI_CLOCK 8000000  // 8MHz clock works.
 #define SS_PIN   21
 
+//const int LED_DATA_PIN = 15;
+//const uint16_t LED_COUNT = 3;
+//const int LED_BRIGHTNESS = 255;
+
+//rgbVal *pixels;
+
+const int SERIAL_LED = 15;
+const int SYNC_LED = 14;
+
+HardwareSerial SerialBLE(0);
 
 MPU9250 mpu(SPI_CLOCK, SS_PIN);
 
@@ -21,7 +26,62 @@ QueueArray <float> gyro0;
 QueueArray <float> gyro1;
 QueueArray <float> gyro2;
 
-float computeAverage(float value, QueueArray<float> &values)
+int timestampMS = 0;
+StopWatch stopWatch = StopWatch(false);
+
+struct PACKET
+{
+	int timestamp;
+
+	uint8_t gyroX;
+	uint8_t gyroY;
+	uint8_t gyroZ;
+
+	uint8_t accelX;
+	uint8_t accelY;
+	uint8_t accelZ;
+};
+
+void sendPacket(PACKET packet)
+{
+	Serial.write((uint8_t *) &packet, (uint16_t) sizeof(PACKET));
+}
+
+
+union ByteTimestamp{
+	byte array[10];
+	uint32_t timestamp;
+};
+
+void sync()
+{
+	digitalWrite(SYNC_LED, HIGH);
+	delay(500);
+	digitalWrite(SYNC_LED, LOW);
+
+	SerialBLE.flush();
+
+	while(!SerialBLE.available()){};
+
+	char buffer[] = {' ',' ',' ',' ',' ',' ',' ',' ',' ',' '}; // Receive up to 10 bytes
+
+	while (Serial.available()) {
+		Serial.readBytesUntil('n', buffer, 12);
+		int incomingValue = atoi(buffer);
+		Serial.println(incomingValue);
+	}
+
+	//timestampMS = SerialBLE.readBytesUntil("\n");
+	timestampMS = atoi(buffer);
+	stopWatch.start();
+
+	Serial.print(timestampMS);
+	delay(300);
+
+	digitalWrite(SYNC_LED, HIGH);
+}
+
+uint8_t computeAverage(float value, QueueArray<float> &values)
 {
 	if (values.count() >= 100){
 		values.pop();
@@ -37,25 +97,59 @@ float computeAverage(float value, QueueArray<float> &values)
 		values.push(val);
 	}
 
-	return sum / size;
+	return static_cast<uint8_t>(sum / size);
 }
 
 
+void setSerialLed(bool on)
+{
+	on ? digitalWrite(SERIAL_LED, HIGH) : digitalWrite(SERIAL_LED, LOW);
+}
 
 void setup() {
 	initArduino();
-	Serial.begin(115200);
 
-	//SPI.begin(int8_t sck, optional int8_t miso, optional int8_t mosi, optional int8_t ss)();
-	//SDA mosi
-	//SCl SCK
-	//SDO/SA0 MISO
-	//SS mpu  = ncs
-	//baro ss = csb
+
+	//Init communication
+
+	Serial.begin(115200);
+	SerialBLE.begin(115200, SERIAL_8N1, 2, 4);
+
+	/*
+	 * SDA mosi
+	 * SCl SCK
+	 * SDO/SA0 MISO
+	 * SS mpu  = ncs
+	 * baro ss = csb
+	 */
 	SPI.begin(16, 18, 17, 21);
 
-	Serial.println("Press any key to continue");
-	WAITFORINPUT();
+
+	//End init communication
+
+	//Init leds
+
+	pinMode(SERIAL_LED, OUTPUT);
+	pinMode(SYNC_LED, OUTPUT);
+
+	digitalWrite(SYNC_LED, LOW);
+	digitalWrite(SERIAL_LED, LOW);
+
+/*	if(ws2812_init(LED_DATA_PIN, LED_WS2812B)) {
+		Serial.println("Init FAILURE: halting");
+		while (true) {};
+	}
+
+	pixels = (rgbVal*)malloc(sizeof(rgbVal) * LED_COUNT);
+
+	pixels[0] = makeRGBVal(2, 1, 3);
+	pixels[1] = makeRGBVal(2, 1, 3);
+	pixels[2] = makeRGBVal(2, 1, 3);
+	ws2812_setColors(LED_COUNT, pixels);
+ */
+	//End init leds
+
+	//Init sensors
 
 	mpu.init(true);
 
@@ -80,26 +174,44 @@ void setup() {
 	mpu.calib_acc();
 	mpu.calib_mag();
 
-	Serial.println("Send any char to begin main loop.");
-	WAITFORINPUT();
-	Serial.println("Run");
+
+	//End init sensors
+
+	//Sync with host
+	sync();
 }
 
 void loop() {
-	//mpu.read_all();
+
+	/*
+	 * 0 -> X axis
+	 * 1 -> Y axis
+	 * 2 -> Z axis
+	*/
 	mpu.read_gyro();
+	mpu.read_acc();
 
-	Serial.print(computeAverage(mpu.gyro_data[0], gyro0));   Serial.print('\t');
-	Serial.print(computeAverage(mpu.gyro_data[1], gyro1));   Serial.print('\t');
-	Serial.print(computeAverage(mpu.gyro_data[2], gyro2));   Serial.print('\t');
+	PACKET packet = {
+			timestampMS + stopWatch.getMs(),
+			computeAverage(mpu.gyro_data[0], gyro0),
+	        computeAverage(mpu.gyro_data[1], gyro1),
+	        computeAverage(mpu.gyro_data[2], gyro2),
+			computeAverage(mpu.accel_data[0], gyro0),
+			computeAverage(mpu.accel_data[1], gyro1),
+			computeAverage(mpu.accel_data[2], gyro2)
+	};
+
+	sendPacket(packet);
+	/*SerialBLE.print(computeAverage(mpu.gyro_data[0], gyro0));   Serial.print('\t');
+	SerialBLE.print(computeAverage(mpu.gyro_data[1], gyro1));   Serial.print('\t');
+	SerialBLE.print(computeAverage(mpu.gyro_data[2], gyro2));   Serial.print('\n');
+	SerialBLE.print(gyro1.count());   Serial.print('\n');
 	Serial.print(gyro1.count());   Serial.print('\t');
-	// Serial.print(mpu.accel_data[0]);  Serial.print('\t');
-	// Serial.print(mpu.accel_data[1]);  Serial.print('\t');
-	// Serial.print(mpu.accel_data[2]);  Serial.print('\t');
-	// Serial.print(mpu.mag_data[0]);    Serial.print('\t');
-	// Serial.print(mpu.mag_data[1]);    Serial.print('\t');
-	// Serial.print(mpu.mag_data[2]);    Serial.print('\t');
-	Serial.println(mpu.temperature);
-
-	delay(10);
+	 Serial.print(mpu.accel_data[0]);  Serial.print('\t');
+	 Serial.print(mpu.accel_data[1]);  Serial.print('\t');
+	 Serial.print(mpu.accel_data[2]);  Serial.print('\t');
+	 Serial.print(mpu.mag_data[0]);    Serial.print('\t');
+	 Serial.print(mpu.mag_data[1]);    Serial.print('\t');
+	 Serial.print(mpu.mag_data[2]);    Serial.print('\t');*/
+	delay(100);
 }
