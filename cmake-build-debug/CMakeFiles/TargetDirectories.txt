@@ -1,0 +1,11 @@
+/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX.dir
+/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/PLATFORMIO_UPDATE_ALL.dir
+/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/PLATFORMIO_UPLOADFS.dir
+/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/PLATFORMIO_BUILD.dir
+/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/PLATFORMIO_PROGRAM.dir
+/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/PLATFORMIO_TEST.dir
+/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/GoTrack.dir
+/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/PLATFORMIO_CLEAN.dir
+/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/PLATFORMIO_UPLOAD.dir
