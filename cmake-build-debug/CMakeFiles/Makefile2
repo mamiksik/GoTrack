@@ -288,7 +288,7 @@ clean: CMakeFiles/PLATFORMIO_TEST.dir/clean
 CMakeFiles/GoTrack.dir/all:
 	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/depend
 	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target GoTrack"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target GoTrack"
 .PHONY : CMakeFiles/GoTrack.dir/all
 
 # Include target in all.
@@ -298,7 +298,7 @@ all: CMakeFiles/GoTrack.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/GoTrack.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/GoTrack.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/GoTrack.dir/rule

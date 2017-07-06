@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/martin/Documents/GoTrack/src/Symbols.cpp" "/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/GoTrack.dir/src/Symbols.cpp.o"
   "/Users/martin/Documents/GoTrack/src/main.cpp" "/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/GoTrack.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
@@ -59,16 +60,14 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/lwip"
   "/Users/martin/.platformio/packages/framework-arduinoespressif32/cores/esp32"
   "/Users/martin/.platformio/packages/framework-arduinoespressif32/variants/esp32"
+  "../.piolibdeps/U8glib_ID7/src"
   "/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"
+  "../lib/atoms"
   "/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"
   "../lib/MPU"
-  "../lib/atoms"
   "../src"
-  "../lib/MPU9250"
-  "../lib/NeoPixels"
-  "../lib/QueueArray"
-  "../lib/SimpleBLE/src"
   "../lib/StopWatch"
+  "../.piolibdeps/ESP8266_SSD1306_ID562"
   "../.piolibdeps/FastLED_ID126"
   "../.piolibdeps/SparkFun MPU-9250 9 DOF IMU Breakout_ID944/src"
   "/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src"

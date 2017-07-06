@@ -149,16 +149,14 @@
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/lwip"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/variants/esp32"/>
+					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/U8glib_ID7/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
+					<Add directory="/Users/martin/Documents/GoTrack/lib/atoms"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
 					<Add directory="/Users/martin/Documents/GoTrack/lib/MPU"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/atoms"/>
 					<Add directory="/Users/martin/Documents/GoTrack/src"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/MPU9250"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/NeoPixels"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/QueueArray"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/SimpleBLE/src"/>
 					<Add directory="/Users/martin/Documents/GoTrack/lib/StopWatch"/>
+					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/ESP8266_SSD1306_ID562"/>
 					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/FastLED_ID126"/>
 					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/SparkFun MPU-9250 9 DOF IMU Breakout_ID944/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src"/>
@@ -242,16 +240,14 @@
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/lwip"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/variants/esp32"/>
+					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/U8glib_ID7/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
+					<Add directory="/Users/martin/Documents/GoTrack/lib/atoms"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
 					<Add directory="/Users/martin/Documents/GoTrack/lib/MPU"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/atoms"/>
 					<Add directory="/Users/martin/Documents/GoTrack/src"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/MPU9250"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/NeoPixels"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/QueueArray"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/SimpleBLE/src"/>
 					<Add directory="/Users/martin/Documents/GoTrack/lib/StopWatch"/>
+					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/ESP8266_SSD1306_ID562"/>
 					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/FastLED_ID126"/>
 					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/SparkFun MPU-9250 9 DOF IMU Breakout_ID944/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src"/>
@@ -305,6 +301,9 @@
 			</Target>
 		</Build>
 		<Unit filename="/Users/martin/Documents/GoTrack/src/.DS_Store">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/GoTrack/src/Symbols.cpp">
 			<Option target="GoTrack"/>
 		</Unit>
 		<Unit filename="/Users/martin/Documents/GoTrack/src/main.cpp">
