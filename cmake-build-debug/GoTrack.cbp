@@ -149,22 +149,24 @@
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/lwip"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/variants/esp32"/>
-					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/U8glib_ID7/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/atoms"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
+					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
 					<Add directory="/Users/martin/Documents/GoTrack/lib/MPU"/>
-					<Add directory="/Users/martin/Documents/GoTrack/src"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/StopWatch"/>
+					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/RTCLib by NeiroN_ID1197"/>
+					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/FS/src"/>
+					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
 					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/ESP8266_SSD1306_ID562"/>
+					<Add directory="/Users/martin/Documents/GoTrack/lib/atoms"/>
+					<Add directory="/Users/martin/Documents/GoTrack/src"/>
+					<Add directory="/Users/martin/Documents/GoTrack/lib/DS1302"/>
+					<Add directory="/Users/martin/Documents/GoTrack/lib/StopWatch"/>
+					<Add directory="/Users/martin/Documents/GoTrack/lib/WiFi/src"/>
 					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/FastLED_ID126"/>
 					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/SparkFun MPU-9250 9 DOF IMU Breakout_ID944/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/ESP32/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/ESPmDNS/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/FS/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SD_MMC/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SimpleBLE/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Update/src"/>
@@ -240,22 +242,24 @@
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/lwip"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/variants/esp32"/>
-					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/U8glib_ID7/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/atoms"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
+					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
 					<Add directory="/Users/martin/Documents/GoTrack/lib/MPU"/>
-					<Add directory="/Users/martin/Documents/GoTrack/src"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/StopWatch"/>
+					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/RTCLib by NeiroN_ID1197"/>
+					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/FS/src"/>
+					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
 					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/ESP8266_SSD1306_ID562"/>
+					<Add directory="/Users/martin/Documents/GoTrack/lib/atoms"/>
+					<Add directory="/Users/martin/Documents/GoTrack/src"/>
+					<Add directory="/Users/martin/Documents/GoTrack/lib/DS1302"/>
+					<Add directory="/Users/martin/Documents/GoTrack/lib/StopWatch"/>
+					<Add directory="/Users/martin/Documents/GoTrack/lib/WiFi/src"/>
 					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/FastLED_ID126"/>
 					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/SparkFun MPU-9250 9 DOF IMU Breakout_ID944/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/ESP32/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/ESPmDNS/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/FS/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SD_MMC/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SimpleBLE/src"/>
 					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Update/src"/>
@@ -303,7 +307,16 @@
 		<Unit filename="/Users/martin/Documents/GoTrack/src/.DS_Store">
 			<Option target="GoTrack"/>
 		</Unit>
-		<Unit filename="/Users/martin/Documents/GoTrack/src/Symbols.cpp">
+		<Unit filename="/Users/martin/Documents/GoTrack/src/Finder.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/GoTrack/src/Frames.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/GoTrack/src/Settings.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/GoTrack/src/Symbols.h">
 			<Option target="GoTrack"/>
 		</Unit>
 		<Unit filename="/Users/martin/Documents/GoTrack/src/main.cpp">

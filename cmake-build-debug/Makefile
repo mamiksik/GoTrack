@@ -227,33 +227,6 @@ PLATFORMIO_UPLOAD/fast:
 	$(MAKE) -f CMakeFiles/PLATFORMIO_UPLOAD.dir/build.make CMakeFiles/PLATFORMIO_UPLOAD.dir/build
 .PHONY : PLATFORMIO_UPLOAD/fast
 
-src/Symbols.o: src/Symbols.cpp.o
-
-.PHONY : src/Symbols.o
-
-# target to build an object file
-src/Symbols.cpp.o:
-	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/src/Symbols.cpp.o
-.PHONY : src/Symbols.cpp.o
-
-src/Symbols.i: src/Symbols.cpp.i
-
-.PHONY : src/Symbols.i
-
-# target to preprocess a source file
-src/Symbols.cpp.i:
-	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/src/Symbols.cpp.i
-.PHONY : src/Symbols.cpp.i
-
-src/Symbols.s: src/Symbols.cpp.s
-
-.PHONY : src/Symbols.s
-
-# target to generate assembly for a file
-src/Symbols.cpp.s:
-	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/src/Symbols.cpp.s
-.PHONY : src/Symbols.cpp.s
-
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -298,9 +271,6 @@ help:
 	@echo "... GoTrack"
 	@echo "... PLATFORMIO_CLEAN"
 	@echo "... PLATFORMIO_UPLOAD"
-	@echo "... src/Symbols.o"
-	@echo "... src/Symbols.i"
-	@echo "... src/Symbols.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

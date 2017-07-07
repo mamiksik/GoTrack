@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/GoTrack.dir/src/Symbols.cpp.o"
   "CMakeFiles/GoTrack.dir/src/main.cpp.o"
   "GoTrack.pdb"
   "GoTrack"

@@ -1,215 +1,208 @@
 #include <Arduino.h>
+#include "Settings.h"
 #include <string>
 #include <Wire.h>
 #include <MPU9250.h>
 #include <../lib/atoms/include/atoms/communication/avakar.h>
 #include <OLEDDisplayUi.h>
 #include <SSD1306.h>
-#include "Symbols.cpp"
+#include "Symbols.h"
+#include "FS.h"
+#include "SD.h"
+#include "Finder.h"
+#include <vector>
+#include <Frames.h>
+#include <WiFi.h>
+#include <time.h>
 
 using namespace atoms;
 
-const uint8_t SERIAL_PINS[2] = { 16, 4 };
-const uint8_t WIRE_PINS[2] = { 21, 22 };
-
-const int SERIAL_LED = 15;
-const int BTN = 25;
 
 HardwareSerial SerialBLE( 2 );
+Finder finder = Finder( SD );
+File logs;
 MPU9250 mpu;
-
 SSD1306 display( 0x3c, WIRE_PINS[ 0 ], WIRE_PINS[ 1 ] );
 OLEDDisplayUi ui( & display );
-
-struct DisplayContext
-{
-	bool newDataMPU;
-
-	float gyroX;
-	float gyroY;
-	float gyroZ;
-
-	float accX;
-	float accY;
-	float accZ;
-
-	float magX;
-	float magY;
-	float magZ;
-
-	float  temp;
-};
 DisplayContext displayContext;
-
-
-void msOverlay( OLEDDisplay *display, OLEDDisplayUiState *state )
-{
-	DisplayContext *context = reinterpret_cast<DisplayContext *>(state->userData);
-	display->setTextAlignment( TEXT_ALIGN_RIGHT );
-	display->setFont( ArialMT_Plain_10 );
-
-	String str = "";
-	if (context->newDataMPU) {
-		str = "yes";
-	} else {
-		str = " no";
-	}
-
-	display->drawString( 128, 0, "Serial out: " + str );
-}
-
-
-
-void introFrame( OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int16_t y )
-{
-	display->setTextAlignment( TEXT_ALIGN_LEFT );
-	display->setFont( ArialMT_Plain_24 );
-	display->drawString( x + 20, y + 16, "GoTrack" );
-	display->setFont( ArialMT_Plain_10 );
-	display->drawString(x + 20, y + 40, "Martin Miksik" );
-
-}
-void gyroFrame( OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int16_t y )
-{
-	DisplayContext *context = reinterpret_cast<DisplayContext *>(state->userData);
-	display->setTextAlignment( TEXT_ALIGN_LEFT );
-	display->setFont( ArialMT_Plain_10 );
-
-	String gx = "Gyro x: " + String( context->gyroX );
-	display->drawString(x + 32, 16 + y, gx );
-
-	String gy = "Gyro y: " + String( context->gyroY );
-	display->drawString(x + 32, 26 + y, gy );
-
-	String gz = "Gyro z: " + String( context->gyroZ );
-	display->drawString(x + 32, 36 + y, gz );
-}
-
-
-void accFrame( OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int16_t y )
-{
-	DisplayContext *context = reinterpret_cast<DisplayContext *>(state->userData);
-	display->setTextAlignment( TEXT_ALIGN_LEFT );
-	display->setFont( ArialMT_Plain_10 );
-
-	String ax = "Acc x: " + String( context->accX );
-	display->drawString(x + 32, 16 + y, ax );
-
-	String ay = "Acc y: " + String( context->accY );
-	display->drawString(x + 32, 26 + y, ay );
-
-	String az = "Acc z: " + String( context->accZ );
-	display->drawString(x + 32, 36 + y, az );
-}
-
-void magFrame( OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int16_t y )
-{
-	DisplayContext *context = reinterpret_cast<DisplayContext *>(state->userData);
-	display->setTextAlignment( TEXT_ALIGN_LEFT );
-	display->setFont( ArialMT_Plain_10 );
-
-	String mx = "Mag x: " + String( context->magX );
-	display->drawString(x + 32, 16 + y, mx );
-
-	String my = "Mag y: " + String( context->magY );
-	display->drawString(x + 32, 26 + y, my );
-
-	String mz = "Mag z: " + String( context->magZ );
-	display->drawString(x + 32, 36 + y, mz );
-}
-
-void dataFrame( OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int16_t y )
-{
-	DisplayContext *context = reinterpret_cast<DisplayContext *>(state->userData);
-	display->setTextAlignment( TEXT_ALIGN_LEFT );
-	display->setFont( ArialMT_Plain_10 );
-
-	String temp = "Temp: " + String( context->temp );
-	display->drawString(x + 32, 26 + y, temp );
-}
+//DS1302 rtc( RT_CLOCK_PINS[ 0 ], RT_CLOCK_PINS[ 1 ], RT_CLOCK_PINS[ 2 ] );
+//DS1302 rtc(RT_CLOCK_PINS[0], RT_CLOCK_PINS[2], RT_CLOCK_PINS[1]);
 
 FrameCallback frames[] = { introFrame, gyroFrame, accFrame, magFrame, dataFrame };
+const int frameCount = 5;
 
-OverlayCallback overlays[] = { msOverlay };
-int overlaysCount = 1;
+OverlayCallback overlays[] = { packetOverlay, savedOverlay };
+const int overlaysCount = 2;
 
-// how many frames are there?
-int frameCount = 5;
+
+int yPosition = 0;
+int packetCount = 0;
 
 
 void send( AvakarPacket packet )
 {
-	for ( int i = 0; i != packet.raw_size( ); i++ ) {
-		Serial.write( packet.raw( )[ i ] );
-		SerialBLE.write( packet.raw( )[ i ] );
+	for ( int i = 0; i != packet.raw_size(); i++ ) {
+		Serial.write( packet.raw()[ i ] );
+		SerialBLE.write( packet.raw()[ i ] );
+		logs.write( packet.raw()[ i ] );
+	}
+
+	packetCount++;
+	if ( packetCount >= FLUSH_AT ) {
+		packetCount = 0;
+		String name = logs.name();
+		logs.flush();
+		logs.close();
+		logs = SD.open( name, FILE_APPEND );
+	}
+}
+
+
+void report( String str )
+{
+	display.drawString( 0, yPosition, str );
+	display.drawString( 140, yPosition, String( yPosition ) );
+	yPosition += 10;
+	display.display();
+	delay( 500 );
+
+	if ( yPosition >= 60 ) {
+		delay( 1000 );
+		yPosition = 0;
+		display.clear();
 	}
 }
 
 
 void setup( )
 {
-	initArduino( );
+	display.init();
+	display.flipScreenVertically();
+	display.setTextAlignment( TEXT_ALIGN_LEFT );
+	display.setFont( ArialMT_Plain_10 );
+
+	initArduino();
+	report( "Arduino initialized" );
 
 	pinMode( SERIAL_LED, OUTPUT );
 	pinMode( BTN, INPUT_PULLDOWN );
 
 	Serial.begin( 115200 );
+	report( "Serial initialized" );
+
 	SerialBLE.begin( 115200, SERIAL_8N1, SERIAL_PINS[ 0 ], SERIAL_PINS[ 1 ] );
+	report( "Serial bluetooth initialized" );
 
 	Wire.begin( WIRE_PINS[ 0 ], WIRE_PINS[ 1 ], 400000 );
+	report( "I2C initialized" );
 
-	ui.setTargetFPS( 23 );
+/*
+	rtc.writeProtect(false);
+	rtc.halt(false);
+	Time t2(2017,7,7,11,7, 14, Time::Day::kFriday);
+	rtc.time(t2);
+	report(String(rtc.time().date));
+	Time t = rtc.time();
+	char buf[50];
+	snprintf(buf, sizeof(buf), "%s %04d-%02d-%02d %02d:%02d:%02d",
+	         "sad ",
+	         t.yr, t.mon, t.date,
+	         t.hr, t.min, t.sec);
+	report(String(buf));
+	rtc.begin( );
+	rtc.adjust( DateTime( "Dec 26 2009", "12:34:56" ) );
 
-	// Customize the active and inactive symbol
-	ui.setActiveSymbol( activeSymbol );
-	ui.setInactiveSymbol( inactiveSymbol );
+	if ( !rtc.isrunning( ) ) {
+		Serial.println( "RTC is NOT running!" );
+		report( "RTC is NOT running!" );
+		rtc.adjust( DateTime( "Dec 26 2009", "12:34:56" ) );
+		exit( 1 );
+	}
 
-	// You can change this to
-	// TOP, LEFT, BOTTOM, RIGHT
-	ui.setIndicatorPosition( LEFT );
-//	ui.getUiState( )->userData =;
-
-	// Defines where the first frame is located in the bar.
-	ui.setIndicatorDirection( LEFT_RIGHT );
-
-	// You can change the transition that is used
-	// SLIDE_LEFT, SLIDE_RIGHT, SLIDE_UP, SLIDE_DOWN
-	ui.setFrameAnimation( SLIDE_UP );
-
-	// Add frames
-	ui.setFrames( frames, frameCount );
-
-	// Add overlays
-	ui.setOverlays( overlays, overlaysCount );
-
-//	ui.setTimePerFrame(1000);
-
-	// Initialising the UI will init the display too.
-	ui.init( );
-
-	display.flipScreenVertically( );
-
-	ui.getUiState( )->userData = & displayContext;
-
-	ui.disableAutoTransition( );
-//	display.setFont( ArialMT_Plain_10 );
-//	display.drawString( 0, 0, "Hello world" );
-//	display.setFont( ArialMT_Plain_16 );
-//	display.drawString( 0, 10, "Hello world" );
-//	display.setFont( ArialMT_Plain_24 );
-//	display.display( );
+	DateTime now = rtc.now( );
+	char buf[100];
+	strncpy( buf, "DD.MM.YYYY  hh:mm:ss\0", 100 );
+	report( String( now.format( buf ) ) );
+	delay(1000);
+	now = rtc.now( );
+	strncpy( buf, "DD.MM.YYYY  hh:mm:ss\0", 100 );
+	report( String( now.format( buf ) ) );
+	exit( 1 );*/
 
 
-//	display.firstPage ();
-//	display.setFont(u8g_font_unifont);
-//	display.print ("Hello world!");
-//	delay( 3000 );
-//	exit(1);
+	int counter = 0;
+	while ( !WiFi.isConnected() ) {
+		WiFi.begin( WIFI_SSID, WIFI_PASSWORD );
+		report( "Trying to connect..." );
+		counter++;
+
+		if ( counter == WIFI_TRIES ) {
+			report( "Cant connect to wifi!" );
+			exit( 1 );
+		}
+		delay( 10 );
+	}
+
+	report( "WiFi connected" );
+
+	time_t now = time( nullptr );
+	time_t last = time( nullptr );
+	counter = 0;
+	while ( !now || now == last) {
+		configTime( 3600, 0, "pool.ntp.org", "time.nist.gov", "time.windows.com" );
+		time( & now ); // until time is set, it remains 0
+		counter++;
+
+		if ( counter == TIME_TRIES ) {
+			report( "Cant obtain time!" );
+			report( String( ctime( & now ) ) );
+			exit( 1 );
+		}
+
+		report( "Waiting for time..." );
+		report( String( ctime( & now ) ) );
+		delay( 10 );
+	}
+
+	report( String( ctime( & now ) ) );
+	delay( 500 );
+
+	if ( !SD.begin() ) {
+		report( "Card Mount Failed" );
+		exit( 1 );
+	}
+	report( "Card mounted" );
+
+	uint8_t cardType = SD.cardType();
+	if ( cardType == CARD_NONE ) {
+		report( "No SD card attached" );
+		exit( 1 );
+	}
+	int cardSize = SD.cardSize() / ( 1024 * 1024 );
+	report( "SD Card Size: " + String( cardSize ) );
+	//report( String( cardSize ) );
+
+	if ( !SD.open( "/GoTrack_logs" ).isDirectory() ) {
+		report( "mkdir GoTrack_logs" );
+		SD.mkdir( "/GoTrack_logs" );
+	}
+
+	std::vector < File > fs = finder.from( "/GoTrack_logs" )->type( Type::TypeFile )->depth( 0 )->get();
+	report( "ls logs:" );
+	for ( auto content : fs ) {
+		report( content.name() );
+	}
+
+
+	String path = "/GoTrack_logs/" + String( now ) + ".avakar";
+	report( "Path: " + path );
+	logs = SD.open( path, FILE_WRITE );
+
 	byte c = mpu.readByte( MPU9250_ADDRESS, WHO_AM_I_MPU9250 );
 	if ( c == 0x71 ) {
-		Serial.println( "Successful connection to MPU9250" );
+		report( "MPU9250 connected" );
 	} else {
-		Serial.println( "Failed connection to MPU9250" );
+		report( "MPU9250 failed to connected" );
 		exit( 1 );
 	}
 
@@ -237,13 +230,13 @@ void setup( )
 	// Calibrate gyro and accelerometers, load biases in bias registers
 	mpu.calibrateMPU9250( mpu.gyroBias, mpu.accelBias );
 
-	mpu.initMPU9250( );
+	mpu.initMPU9250();
 
 	byte d = mpu.readByte( AK8963_ADDRESS, WHO_AM_I_AK8963 );
 	if ( d == 0x48 ) {
-		Serial.println( "Successful connection to AK8963" );
+		report( "AK8963 connected" );
 	} else {
-		Serial.println( "Failed connection to AK8963" );
+		report( "AK8963 failed to connect" );
 		exit( 1 );
 	}
 
@@ -256,6 +249,27 @@ void setup( )
 	Serial.print( "Z-Axis sensitivity adjustment value " );
 	Serial.println( mpu.magCalibration[ 2 ], 2 );
 
+	delay( 500 );
+	display.clear();
+
+	ui.setTargetFPS( 23 );
+
+	ui.setActiveSymbol( activeSymbol );
+	ui.setInactiveSymbol( inactiveSymbol );
+
+	ui.setIndicatorPosition( LEFT );
+	ui.setIndicatorDirection( LEFT_RIGHT );
+	ui.setFrameAnimation( SLIDE_UP );
+
+
+	ui.setFrames( frames, frameCount );
+	ui.setOverlays( overlays, overlaysCount );
+
+	ui.init();
+	display.flipScreenVertically();
+	ui.disableAutoTransition();
+
+	ui.getUiState()->userData = & displayContext;
 	displayContext.newDataMPU = false;
 
 }
@@ -263,13 +277,13 @@ void setup( )
 
 void loop( )
 {
-	int remainingTimeBudget = ui.update( );
+	ui.update();
 
 	if ( mpu.readByte( MPU9250_ADDRESS, INT_STATUS ) & 0x01 ) {
 		displayContext.newDataMPU = true;
 		Serial.println( "New values" );
 		mpu.readAccelData( mpu.accelCount );  // Read the x/y/z adc values
-		mpu.getAres( );
+		mpu.getAres();
 
 		// Now we'll calculate the accleration value into actual g's
 		// This depends on scale being set
@@ -278,7 +292,7 @@ void loop( )
 		mpu.az = ( float ) mpu.accelCount[ 2 ] * mpu.aRes; // - accelBias[2];
 
 		mpu.readGyroData( mpu.gyroCount );  // Read the x/y/z adc values
-		mpu.getGres( );
+		mpu.getGres();
 
 		// Calculate the gyro value into actual degrees per second
 		// This depends on scale being set
@@ -287,7 +301,7 @@ void loop( )
 		mpu.gz = ( float ) mpu.gyroCount[ 2 ] * mpu.gRes;
 
 		mpu.readMagData( mpu.magCount );  // Read the x/y/z adc values
-		mpu.getMres( );
+		mpu.getMres();
 
 		// User environmental x-axis correction in milliGauss, should be
 		// automatically calculated
@@ -312,9 +326,9 @@ void loop( )
 
 	}
 	// Must be called before updating quaternions!
-	mpu.updateTime( );
+	mpu.updateTime();
 
-	mpu.delt_t = millis( ) - mpu.count;
+	mpu.delt_t = millis() - mpu.count;
 	if ( mpu.delt_t > 100 ) {
 		Serial.println( "Send values" );
 
@@ -343,7 +357,7 @@ void loop( )
 		send( mag );
 
 
-		mpu.tempCount = mpu.readTempData( );
+		mpu.tempCount = mpu.readTempData();
 		mpu.temperature = ( ( float ) mpu.tempCount ) / 333.87 + 21.0;
 
 
@@ -354,7 +368,7 @@ void loop( )
 
 		send( data );
 
-		mpu.count = millis( );
+		mpu.count = millis();
 		digitalWrite( SERIAL_LED, !digitalRead( SERIAL_LED ) );  // toggle led
 		displayContext.newDataMPU = !displayContext.newDataMPU;
 
@@ -373,11 +387,10 @@ void loop( )
 		displayContext.magZ = mpu.mz;
 
 		displayContext.temp = mpu.temperature;
+		displayContext.packetCount = packetCount;
 	}
 
 	if ( digitalRead( BTN ) == 1 ) {
-//		ui.setTargetFPS( 23 );
-		ui.nextFrame( );
-//		ui.setTargetFPS( 11 );
+		ui.nextFrame();
 	}
 }

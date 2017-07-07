@@ -1,5 +1,4 @@
-#ifndef GOTRACK_SYMBOLS_H
-#define GOTRACK_SYMBOLS_H
+#pragma once
 
 #include <Arduino.h>
 
@@ -25,4 +24,3 @@ const char inactiveSymbol[] PROGMEM = {
 		B00000000
 };
 
-#endif //GOTRACK_SYMBOLS_H
