@@ -14,6 +14,8 @@
 #include <Frames.h>
 #include <WiFi.h>
 #include <time.h>
+#include <SmartLeds.h>
+#include <Adafruit_BMP280.h>
 
 using namespace atoms;
 
@@ -22,6 +24,10 @@ HardwareSerial SerialBLE( 2 );
 Finder finder = Finder( SD );
 File logs;
 MPU9250 mpu;
+Adafruit_BMP280 bmp;
+
+SmartLed leds( LED_WS2812, LED_COUNT, DATA_PIN, CHANNEL, DoubleBuffer );
+
 SSD1306 display( 0x3c, WIRE_PINS[ 0 ], WIRE_PINS[ 1 ] );
 OLEDDisplayUi ui( & display );
 DisplayContext displayContext;
@@ -37,6 +43,29 @@ const int overlaysCount = 2;
 
 int yPosition = 0;
 int packetCount = 0;
+
+uint8_t hue;
+void showGradient() {
+	hue++;
+	// Use HSV to create nice gradient
+	for ( int i = 0; i != LED_COUNT; i++ ) {
+		leds[ i ] = Hsv{ static_cast< uint8_t >( hue + 50 * i ), 255, 15 };
+	}
+
+	leds.show();
+	// Show is asynchronous; if we need to wait for the end of transmission,
+	// we can use leds.wait(); however we use double buffered mode, so we
+	// can start drawing right after showing.
+}
+
+void showRgb() {
+	leds[ 0 ] = Rgb{ 255, 0, 0 };
+	leds[ 1 ] = Rgb{ 0, 255, 0 };
+	leds[ 2 ] = Rgb{ 0, 0, 255 };
+	leds[ 3 ] = Rgb{ 0, 0, 0 };
+	leds[ 4 ] = Rgb{ 255, 255, 255 };
+	leds.show();
+}
 
 
 void send( AvakarPacket packet )
@@ -64,13 +93,14 @@ void report( String str )
 	display.drawString( 140, yPosition, String( yPosition ) );
 	yPosition += 10;
 	display.display();
-	delay( 500 );
+	delay( 250 );
 
 	if ( yPosition >= 60 ) {
-		delay( 1000 );
+		delay( 250 );
 		yPosition = 0;
 		display.clear();
 	}
+	Serial.println(str);
 }
 
 
@@ -85,7 +115,7 @@ void setup( )
 	report( "Arduino initialized" );
 
 	pinMode( SERIAL_LED, OUTPUT );
-	pinMode( BTN, INPUT_PULLDOWN );
+	pinMode( BTN, INPUT_PULLUP );
 
 	Serial.begin( 115200 );
 	report( "Serial initialized" );
@@ -96,6 +126,19 @@ void setup( )
 	Wire.begin( WIRE_PINS[ 0 ], WIRE_PINS[ 1 ], 400000 );
 	report( "I2C initialized" );
 
+//	32
+	//static const uint8_t MOSI  = 23;
+	//static const uint8_t MISO  = 19;
+	//static const uint8_t SCK   = 18;
+	//(int8_t sck, int8_t miso, int8_t mosi, int8_t ss)
+	SPI.begin(14, 19, 23);
+
+	bmp.begin();
+	report(String(bmp.readAltitude(1010)));
+	report(String(bmp.readPressure()));
+	report(String(bmp.readTemperature()));
+
+	report("------");
 /*
 	rtc.writeProtect(false);
 	rtc.halt(false);
@@ -131,79 +174,79 @@ void setup( )
 
 
 	int counter = 0;
-	while ( !WiFi.isConnected() ) {
-		WiFi.begin( WIFI_SSID, WIFI_PASSWORD );
-		report( "Trying to connect..." );
-		counter++;
-
-		if ( counter == WIFI_TRIES ) {
-			report( "Cant connect to wifi!" );
-			exit( 1 );
-		}
-		delay( 10 );
-	}
-
-	report( "WiFi connected" );
+//	while ( !WiFi.isConnected() ) {
+//		WiFi.begin( WIFI_SSID, WIFI_PASSWORD );
+//		report( "Trying to connect..." );
+//		counter++;
+//
+//		if ( counter == WIFI_TRIES ) {
+//			report( "Cant connect to wifi!" );
+//			exit( 1 );
+//		}
+//		delay( 10 );
+//	}
+//
+//	report( "WiFi connected" );
 
 	time_t now = time( nullptr );
 	time_t last = time( nullptr );
 	counter = 0;
-	while ( !now || now == last) {
-		configTime( 3600, 0, "pool.ntp.org", "time.nist.gov", "time.windows.com" );
-		time( & now ); // until time is set, it remains 0
-		counter++;
-
-		if ( counter == TIME_TRIES ) {
-			report( "Cant obtain time!" );
-			report( String( ctime( & now ) ) );
-			exit( 1 );
-		}
-
-		report( "Waiting for time..." );
-		report( String( ctime( & now ) ) );
-		delay( 10 );
-	}
+//	while ( !now || now == last) {
+//		configTime( 3600, 0, "pool.ntp.org", "time.nist.gov", "time.windows.com" );
+//		time( & now ); // until time is set, it remains 0
+//		counter++;
+//
+//		if ( counter == TIME_TRIES ) {
+//			report( "Cant obtain time!" );
+//			report( String( ctime( & now ) ) );
+//			exit( 1 );
+//		}
+//
+//		report( "Waiting for time..." );
+//		report( String( ctime( & now ) ) );
+//		delay( 10 );
+//	}
 
 	report( String( ctime( & now ) ) );
-	delay( 500 );
 
-	if ( !SD.begin() ) {
-		report( "Card Mount Failed" );
-		exit( 1 );
-	}
-	report( "Card mounted" );
+//	if ( !SD.begin(12) ) {
+//		report( "Card Mount Failed" );
+//		exit( 1 );
+//	}
+//	report( "Card mounted" );
+//
+//	uint8_t cardType = SD.cardType();
+//	if ( cardType == CARD_NONE ) {
+//		report( "No SD card attached" );
+//		exit( 1 );
+//	}
+//	int cardSize = SD.cardSize() / ( 1024 * 1024 );
+//	report( "SD Card Size: " + String( cardSize ) );
+//	report( String( cardSize ) );
+//
+//	if ( !SD.open( "/GoTrack_logs" ).isDirectory() ) {
+//		report( "mkdir GoTrack_logs" );
+//		SD.mkdir( "/GoTrack_logs" );
+//	}
 
-	uint8_t cardType = SD.cardType();
-	if ( cardType == CARD_NONE ) {
-		report( "No SD card attached" );
-		exit( 1 );
-	}
-	int cardSize = SD.cardSize() / ( 1024 * 1024 );
-	report( "SD Card Size: " + String( cardSize ) );
-	//report( String( cardSize ) );
-
-	if ( !SD.open( "/GoTrack_logs" ).isDirectory() ) {
-		report( "mkdir GoTrack_logs" );
-		SD.mkdir( "/GoTrack_logs" );
-	}
-
-	std::vector < File > fs = finder.from( "/GoTrack_logs" )->type( Type::TypeFile )->depth( 0 )->get();
-	report( "ls logs:" );
-	for ( auto content : fs ) {
-		report( content.name() );
-	}
+//	std::vector < File > fs = finder.from( "/GoTrack_logs" )->type( Type::TypeFile )->depth( 0 )->get();
+//	report( "ls logs:" );
+//	for ( auto content : fs ) {
+//		report( content.name() );
+//	}
 
 
-	String path = "/GoTrack_logs/" + String( now ) + ".avakar";
-	report( "Path: " + path );
-	logs = SD.open( path, FILE_WRITE );
+//	String path = "/GoTrack_logs/" + String( now ) + ".avakar";
+//	report( "Path: " + path );
+//	logs = SD.open( path, FILE_WRITE );
 
 	byte c = mpu.readByte( MPU9250_ADDRESS, WHO_AM_I_MPU9250 );
 	if ( c == 0x71 ) {
 		report( "MPU9250 connected" );
 	} else {
+		report(String(c));
 		report( "MPU9250 failed to connected" );
-		exit( 1 );
+		//exit( 1 );
 	}
 
 	// Start by performing self test and reporting values
@@ -237,7 +280,7 @@ void setup( )
 		report( "AK8963 connected" );
 	} else {
 		report( "AK8963 failed to connect" );
-		exit( 1 );
+		//exit( 1 );
 	}
 
 
@@ -249,8 +292,13 @@ void setup( )
 	Serial.print( "Z-Axis sensitivity adjustment value " );
 	Serial.println( mpu.magCalibration[ 2 ], 2 );
 
+	report(String(bmp.readPressure()));
+	report(String(bmp.readTemperature()));
+
 	delay( 500 );
 	display.clear();
+
+
 
 	ui.setTargetFPS( 23 );
 
@@ -277,6 +325,9 @@ void setup( )
 
 void loop( )
 {
+
+	showGradient();
+
 	ui.update();
 
 	if ( mpu.readByte( MPU9250_ADDRESS, INT_STATUS ) & 0x01 ) {
