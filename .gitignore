@@ -3,4 +3,6 @@
 .clang_complete
 .gcc-flags.json
 .piolibdeps
+cmake-build-debug/
+cmake-build-debug/*
 CMakeListsPrivate.txt
