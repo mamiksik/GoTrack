@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/martin/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/171.4694.31/CLion.app/Contents/bin/cmake/bin/cmake"
+CMAKE_COMMAND = /Volumes/InternalData/Applications/JetBrains/apps/CLion/ch-0/171.4694.31/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = "/Users/martin/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/171.4694.31/CLion.app/Contents/bin/cmake/bin/cmake" -E remove -f
+RM = /Volumes/InternalData/Applications/JetBrains/apps/CLion/ch-0/171.4694.31/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/martin/Documents/GoTrack/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"/Users/martin/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/171.4694.31/CLion.app/Contents/bin/cmake/bin/cmake" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Volumes/InternalData/Applications/JetBrains/apps/CLion/ch-0/171.4694.31/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"/Users/martin/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/171.4694.31/CLion.app/Contents/bin/cmake/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+	/Volumes/InternalData/Applications/JetBrains/apps/CLion/ch-0/171.4694.31/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -111,82 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named PLATFORMIO_REBUILD_PROJECT_INDEX
+# Target rules for targets named BUILD_AND_FLASH
 
 # Build rule for target.
-PLATFORMIO_REBUILD_PROJECT_INDEX: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_REBUILD_PROJECT_INDEX
-.PHONY : PLATFORMIO_REBUILD_PROJECT_INDEX
+BUILD_AND_FLASH: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BUILD_AND_FLASH
+.PHONY : BUILD_AND_FLASH
 
 # fast build rule for target.
-PLATFORMIO_REBUILD_PROJECT_INDEX/fast:
-	$(MAKE) -f CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX.dir/build.make CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX.dir/build
-.PHONY : PLATFORMIO_REBUILD_PROJECT_INDEX/fast
-
-#=============================================================================
-# Target rules for targets named PLATFORMIO_UPDATE_ALL
-
-# Build rule for target.
-PLATFORMIO_UPDATE_ALL: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_UPDATE_ALL
-.PHONY : PLATFORMIO_UPDATE_ALL
-
-# fast build rule for target.
-PLATFORMIO_UPDATE_ALL/fast:
-	$(MAKE) -f CMakeFiles/PLATFORMIO_UPDATE_ALL.dir/build.make CMakeFiles/PLATFORMIO_UPDATE_ALL.dir/build
-.PHONY : PLATFORMIO_UPDATE_ALL/fast
-
-#=============================================================================
-# Target rules for targets named PLATFORMIO_UPLOADFS
-
-# Build rule for target.
-PLATFORMIO_UPLOADFS: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_UPLOADFS
-.PHONY : PLATFORMIO_UPLOADFS
-
-# fast build rule for target.
-PLATFORMIO_UPLOADFS/fast:
-	$(MAKE) -f CMakeFiles/PLATFORMIO_UPLOADFS.dir/build.make CMakeFiles/PLATFORMIO_UPLOADFS.dir/build
-.PHONY : PLATFORMIO_UPLOADFS/fast
-
-#=============================================================================
-# Target rules for targets named PLATFORMIO_BUILD
-
-# Build rule for target.
-PLATFORMIO_BUILD: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_BUILD
-.PHONY : PLATFORMIO_BUILD
-
-# fast build rule for target.
-PLATFORMIO_BUILD/fast:
-	$(MAKE) -f CMakeFiles/PLATFORMIO_BUILD.dir/build.make CMakeFiles/PLATFORMIO_BUILD.dir/build
-.PHONY : PLATFORMIO_BUILD/fast
-
-#=============================================================================
-# Target rules for targets named PLATFORMIO_PROGRAM
-
-# Build rule for target.
-PLATFORMIO_PROGRAM: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_PROGRAM
-.PHONY : PLATFORMIO_PROGRAM
-
-# fast build rule for target.
-PLATFORMIO_PROGRAM/fast:
-	$(MAKE) -f CMakeFiles/PLATFORMIO_PROGRAM.dir/build.make CMakeFiles/PLATFORMIO_PROGRAM.dir/build
-.PHONY : PLATFORMIO_PROGRAM/fast
-
-#=============================================================================
-# Target rules for targets named PLATFORMIO_TEST
-
-# Build rule for target.
-PLATFORMIO_TEST: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_TEST
-.PHONY : PLATFORMIO_TEST
-
-# fast build rule for target.
-PLATFORMIO_TEST/fast:
-	$(MAKE) -f CMakeFiles/PLATFORMIO_TEST.dir/build.make CMakeFiles/PLATFORMIO_TEST.dir/build
-.PHONY : PLATFORMIO_TEST/fast
+BUILD_AND_FLASH/fast:
+	$(MAKE) -f CMakeFiles/BUILD_AND_FLASH.dir/build.make CMakeFiles/BUILD_AND_FLASH.dir/build
+.PHONY : BUILD_AND_FLASH/fast
 
 #=============================================================================
 # Target rules for targets named GoTrack
@@ -202,57 +137,745 @@ GoTrack/fast:
 .PHONY : GoTrack/fast
 
 #=============================================================================
-# Target rules for targets named PLATFORMIO_CLEAN
+# Target rules for targets named SETTINGS
 
 # Build rule for target.
-PLATFORMIO_CLEAN: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_CLEAN
-.PHONY : PLATFORMIO_CLEAN
+SETTINGS: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 SETTINGS
+.PHONY : SETTINGS
 
 # fast build rule for target.
-PLATFORMIO_CLEAN/fast:
-	$(MAKE) -f CMakeFiles/PLATFORMIO_CLEAN.dir/build.make CMakeFiles/PLATFORMIO_CLEAN.dir/build
-.PHONY : PLATFORMIO_CLEAN/fast
+SETTINGS/fast:
+	$(MAKE) -f CMakeFiles/SETTINGS.dir/build.make CMakeFiles/SETTINGS.dir/build
+.PHONY : SETTINGS/fast
 
 #=============================================================================
-# Target rules for targets named PLATFORMIO_UPLOAD
+# Target rules for targets named REINDEX_LIBS
 
 # Build rule for target.
-PLATFORMIO_UPLOAD: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_UPLOAD
-.PHONY : PLATFORMIO_UPLOAD
+REINDEX_LIBS: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 REINDEX_LIBS
+.PHONY : REINDEX_LIBS
 
 # fast build rule for target.
-PLATFORMIO_UPLOAD/fast:
-	$(MAKE) -f CMakeFiles/PLATFORMIO_UPLOAD.dir/build.make CMakeFiles/PLATFORMIO_UPLOAD.dir/build
-.PHONY : PLATFORMIO_UPLOAD/fast
+REINDEX_LIBS/fast:
+	$(MAKE) -f CMakeFiles/REINDEX_LIBS.dir/build.make CMakeFiles/REINDEX_LIBS.dir/build
+.PHONY : REINDEX_LIBS/fast
 
-src/main.o: src/main.cpp.o
+#=============================================================================
+# Target rules for targets named BUILD
 
-.PHONY : src/main.o
+# Build rule for target.
+BUILD: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BUILD
+.PHONY : BUILD
+
+# fast build rule for target.
+BUILD/fast:
+	$(MAKE) -f CMakeFiles/BUILD.dir/build.make CMakeFiles/BUILD.dir/build
+.PHONY : BUILD/fast
+
+Users/martin/Documents/Gatt_server/main/BLELib.o: Users/martin/Documents/Gatt_server/main/BLELib.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/BLELib.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+Users/martin/Documents/Gatt_server/main/BLELib.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/BLELib.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/BLELib.cpp.o
 
-src/main.i: src/main.cpp.i
+Users/martin/Documents/Gatt_server/main/BLELib.i: Users/martin/Documents/Gatt_server/main/BLELib.cpp.i
 
-.PHONY : src/main.i
+.PHONY : Users/martin/Documents/Gatt_server/main/BLELib.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+Users/martin/Documents/Gatt_server/main/BLELib.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/BLELib.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/BLELib.cpp.i
 
-src/main.s: src/main.cpp.s
+Users/martin/Documents/Gatt_server/main/BLELib.s: Users/martin/Documents/Gatt_server/main/BLELib.cpp.s
 
-.PHONY : src/main.s
+.PHONY : Users/martin/Documents/Gatt_server/main/BLELib.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+Users/martin/Documents/Gatt_server/main/BLELib.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/BLELib.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/BLELib.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.o: Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.i: Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.s: Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.o: Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.i: Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.s: Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.o: Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.i: Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.s: Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.o: Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.i: Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.s: Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.o: Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.i: Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.s: Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.o: Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.i: Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.s: Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.o: Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.i: Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.s: Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.o: Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.i: Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.s: Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.o: Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.i: Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.s: Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.o: Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.i: Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.s: Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.o: Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.i: Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.s: Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.o: Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.i: Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.s: Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.o: Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.i: Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.s: Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.o: Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.i: Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.s: Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.o: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.i: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.s: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.o: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.i: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.s: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.o: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.i: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.s: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.o: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.i: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.s: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.o: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.i: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.s: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.o: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.i: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.s: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.o: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.i: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.s: Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.o: Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.i: Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.s: Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.o: Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.i: Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.s: Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.cpp.s
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.o: Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.cpp.o
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.i: Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.cpp.i
+
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.s: Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.cpp.s
+
+Users/martin/Documents/Gatt_server/main/main.o: Users/martin/Documents/Gatt_server/main/main.cpp.o
+
+.PHONY : Users/martin/Documents/Gatt_server/main/main.o
+
+# target to build an object file
+Users/martin/Documents/Gatt_server/main/main.cpp.o:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/main.cpp.o
+.PHONY : Users/martin/Documents/Gatt_server/main/main.cpp.o
+
+Users/martin/Documents/Gatt_server/main/main.i: Users/martin/Documents/Gatt_server/main/main.cpp.i
+
+.PHONY : Users/martin/Documents/Gatt_server/main/main.i
+
+# target to preprocess a source file
+Users/martin/Documents/Gatt_server/main/main.cpp.i:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/main.cpp.i
+.PHONY : Users/martin/Documents/Gatt_server/main/main.cpp.i
+
+Users/martin/Documents/Gatt_server/main/main.s: Users/martin/Documents/Gatt_server/main/main.cpp.s
+
+.PHONY : Users/martin/Documents/Gatt_server/main/main.s
+
+# target to generate assembly for a file
+Users/martin/Documents/Gatt_server/main/main.cpp.s:
+	$(MAKE) -f CMakeFiles/GoTrack.dir/build.make CMakeFiles/GoTrack.dir/Users/martin/Documents/Gatt_server/main/main.cpp.s
+.PHONY : Users/martin/Documents/Gatt_server/main/main.cpp.s
 
 # Help Target
 help:
@@ -261,19 +884,90 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... PLATFORMIO_REBUILD_PROJECT_INDEX"
-	@echo "... PLATFORMIO_UPDATE_ALL"
-	@echo "... PLATFORMIO_UPLOADFS"
-	@echo "... PLATFORMIO_BUILD"
-	@echo "... PLATFORMIO_PROGRAM"
-	@echo "... PLATFORMIO_TEST"
 	@echo "... edit_cache"
+	@echo "... BUILD_AND_FLASH"
 	@echo "... GoTrack"
-	@echo "... PLATFORMIO_CLEAN"
-	@echo "... PLATFORMIO_UPLOAD"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... SETTINGS"
+	@echo "... REINDEX_LIBS"
+	@echo "... BUILD"
+	@echo "... Users/martin/Documents/Gatt_server/main/BLELib.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/BLELib.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/BLELib.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.s"
+	@echo "... Users/martin/Documents/Gatt_server/main/main.o"
+	@echo "... Users/martin/Documents/Gatt_server/main/main.i"
+	@echo "... Users/martin/Documents/Gatt_server/main/main.s"
 .PHONY : help
 
 

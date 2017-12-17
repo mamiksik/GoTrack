@@ -1,0 +1,13 @@
+{% for include in esp_includes %}
+include_directories("{{ include }}")
+{% endfor %}
+
+{% for include in libs_includes %}
+include_directories("{{ include }}")
+{% endfor %}
+
+{% for include in arduino_includes %}
+include_directories("{{ include }}")
+{% endfor %}
+
+FILE(GLOB_RECURSE SRC_LIST "{{project_src_dir}}/*.*")

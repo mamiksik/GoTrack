@@ -11,90 +11,40 @@
 				<Option working_dir="/Users/martin/Documents/GoTrack/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="/Users/martin/Documents/GoTrack/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="PLATFORMIO_REBUILD_PROJECT_INDEX">
-				<Option working_dir="/Users/martin/Documents/GoTrack/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 PLATFORMIO_REBUILD_PROJECT_INDEX"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="PLATFORMIO_UPDATE_ALL">
-				<Option working_dir="/Users/martin/Documents/GoTrack/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 PLATFORMIO_UPDATE_ALL"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="PLATFORMIO_UPLOADFS">
-				<Option working_dir="/Users/martin/Documents/GoTrack/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 PLATFORMIO_UPLOADFS"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="PLATFORMIO_BUILD">
-				<Option working_dir="/Users/martin/Documents/GoTrack/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 PLATFORMIO_BUILD"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="PLATFORMIO_PROGRAM">
-				<Option working_dir="/Users/martin/Documents/GoTrack/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 PLATFORMIO_PROGRAM"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="PLATFORMIO_TEST">
-				<Option working_dir="/Users/martin/Documents/GoTrack/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 PLATFORMIO_TEST"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/Users/martin/Documents/GoTrack/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BUILD_AND_FLASH">
+				<Option working_dir="/Users/martin/Documents/GoTrack/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 BUILD_AND_FLASH"/>
+					<CompileFile command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="GoTrack">
@@ -104,90 +54,89 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DARDUINO=10610"/>
-					<Add option="-DARDUINO_ARCH_ESP32"/>
-					<Add option="-DESP32"/>
-					<Add option="-DESP_PLATFORM"/>
-					<Add option="-DF_CPU=240000000L"/>
-					<Add option="-DHAVE_CONFIG_H"/>
-					<Add option="-DMBEDTLS_CONFIG_FILE=&quot;mbedtls/esp_config.h&quot;"/>
-					<Add option="-DPLATFORMIO=30300"/>
-					<Add option="-DESP32_DEV"/>
-					<Add option="-DARDUINO_ESP32_DEV"/>
-					<Add option="-DATOMS_NO_EXCEPTION"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/config"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bluedroid"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_update"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bootloader_support"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bt"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/driver"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp32"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ethernet"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fatfs"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freertos"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/jsmn"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/log"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mdns"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mbedtls"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mbedtls_port"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/newlib"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nvs_flash"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/openssl"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/soc"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/spi_flash"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/sdmmc"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/tcpip_adapter"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ulp"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/vfs"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wear_levelling"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/xtensa-debug-module"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/coap"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wpa_supplicant"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/expat"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/json"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nghttp"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/lwip"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/variants/esp32"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/MPU"/>
-					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/RTCLib by NeiroN_ID1197"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/FS/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
-					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/ESP8266_SSD1306_ID562"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/atoms"/>
-					<Add directory="/Users/martin/Documents/GoTrack/src"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/DS1302"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/StopWatch"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/WiFi/src"/>
-					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/FastLED_ID126"/>
-					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/SparkFun MPU-9250 9 DOF IMU Breakout_ID944/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/ESP32/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/ESPmDNS/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SD_MMC/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SimpleBLE/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Update/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src"/>
-					<Add directory="/Users/martin/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/include"/>
-					<Add directory="/Users/martin/.platformio/packages/toolchain-xtensa32/lib/gcc/xtensa-esp32-elf/5.2.0/include"/>
-					<Add directory="/Users/martin/.platformio/packages/toolchain-xtensa32/lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/components"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/build/include"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/components/arduino/cores/esp32"/>
+					<Add directory="/usr/local/esp-idf/components/aws_iot/include"/>
+					<Add directory="/usr/local/esp-idf/components/aws_iot/aws-iot-device-sdk-embedded-C/include"/>
+					<Add directory="/usr/local/esp-idf/components/app_trace/include"/>
+					<Add directory="/usr/local/esp-idf/components/app_update/include"/>
+					<Add directory="/usr/local/esp-idf/components/xtensa-debug-module/include"/>
+					<Add directory="/usr/local/esp-idf/components/bootloader_support/include"/>
+					<Add directory="/usr/local/esp-idf/components/bootloader_support/include_priv"/>
+					<Add directory="/usr/local/esp-idf/components/bt/include"/>
+					<Add directory="/usr/local/esp-idf/components/bt/bluedroid/api/include"/>
+					<Add directory="/usr/local/esp-idf/components/coap/port/include"/>
+					<Add directory="/usr/local/esp-idf/components/coap/port/include/coap"/>
+					<Add directory="/usr/local/esp-idf/components/coap/libcoap/include"/>
+					<Add directory="/usr/local/esp-idf/components/coap/libcoap/include/coap"/>
+					<Add directory="/usr/local/esp-idf/components/cxx/include"/>
+					<Add directory="/usr/local/esp-idf/components/driver/include"/>
+					<Add directory="/usr/local/esp-idf/components/driver/include/driver"/>
+					<Add directory="/usr/local/esp-idf/components/esp32/include"/>
+					<Add directory="/usr/local/esp-idf/components/ethernet/include"/>
+					<Add directory="/usr/local/esp-idf/components/expat/include/expat"/>
+					<Add directory="/usr/local/esp-idf/components/expat/port/include"/>
+					<Add directory="/usr/local/esp-idf/components/fatfs/src"/>
+					<Add directory="/usr/local/esp-idf/components/freertos/include"/>
+					<Add directory="/usr/local/esp-idf/components/jsmn/include"/>
+					<Add directory="/usr/local/esp-idf/components/json/include"/>
+					<Add directory="/usr/local/esp-idf/components/json/port/include"/>
+					<Add directory="/usr/local/esp-idf/components/libsodium/libsodium/src/libsodium/include"/>
+					<Add directory="/usr/local/esp-idf/components/libsodium/libsodium/src/libsodium/include/sodium"/>
+					<Add directory="/usr/local/esp-idf/components/log/include"/>
+					<Add directory="/usr/local/esp-idf/components/lwip/include/lwip"/>
+					<Add directory="/usr/local/esp-idf/components/lwip/include/lwip/port"/>
+					<Add directory="/usr/local/esp-idf/components/lwip/include/lwip/posix"/>
+					<Add directory="/usr/local/esp-idf/components/lwip/apps/ping"/>
+					<Add directory="/usr/local/esp-idf/components/mbedtls/port/include"/>
+					<Add directory="/usr/local/esp-idf/components/mbedtls/include"/>
+					<Add directory="/usr/local/esp-idf/components/mdns/include"/>
+					<Add directory="/usr/local/esp-idf/components/micro-ecc/micro-ecc"/>
+					<Add directory="/usr/local/esp-idf/components/newlib/include"/>
+					<Add directory="/usr/local/esp-idf/components/newlib/platform_include"/>
+					<Add directory="/usr/local/esp-idf/components/nghttp/include"/>
+					<Add directory="/usr/local/esp-idf/components/nghttp/port/include"/>
+					<Add directory="/usr/local/esp-idf/components/nvs_flash/include"/>
+					<Add directory="/usr/local/esp-idf/components/openssl/include"/>
+					<Add directory="/usr/local/esp-idf/components/openssl/include/internal"/>
+					<Add directory="/usr/local/esp-idf/components/openssl/include/platform"/>
+					<Add directory="/usr/local/esp-idf/components/openssl/include/openssl"/>
+					<Add directory="/usr/local/esp-idf/components/sdmmc/include"/>
+					<Add directory="/usr/local/esp-idf/components/spi_flash/include"/>
+					<Add directory="/usr/local/esp-idf/components/tcpip_adapter/include"/>
+					<Add directory="/usr/local/esp-idf/components/soc/esp32/include"/>
+					<Add directory="/usr/local/esp-idf/components/soc/include"/>
+					<Add directory="/usr/local/esp-idf/components/heap/include"/>
+					<Add directory="/usr/local/esp-idf/components/ulp/include"/>
+					<Add directory="/usr/local/esp-idf/components/vfs/include"/>
+					<Add directory="/usr/local/esp-idf/components/wear_levelling/include"/>
+					<Add directory="/usr/local/esp-idf/components/wpa_supplicant/include"/>
+					<Add directory="/usr/local/esp-idf/components/wpa_supplicant/port/include"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main/libs/atoms/include"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main/libs/MPU"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main/MPU/Logging"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main/libs/Logging"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main/libs/BMP280"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main/libs/SSD1306"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main/libs/FastLed"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/components/arduino/libraries/FS/src"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/components/arduino/libraries/SD/src"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/components/arduino/libraries/SPI/src"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/components/arduino/libraries/Wire/src"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 GoTrack"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 GoTrack"/>
+					<CompileFile command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="GoTrack/fast">
@@ -197,129 +146,768 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DARDUINO=10610"/>
-					<Add option="-DARDUINO_ARCH_ESP32"/>
-					<Add option="-DESP32"/>
-					<Add option="-DESP_PLATFORM"/>
-					<Add option="-DF_CPU=240000000L"/>
-					<Add option="-DHAVE_CONFIG_H"/>
-					<Add option="-DMBEDTLS_CONFIG_FILE=&quot;mbedtls/esp_config.h&quot;"/>
-					<Add option="-DPLATFORMIO=30300"/>
-					<Add option="-DESP32_DEV"/>
-					<Add option="-DARDUINO_ESP32_DEV"/>
-					<Add option="-DATOMS_NO_EXCEPTION"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/config"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bluedroid"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_update"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bootloader_support"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/bt"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/driver"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/esp32"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ethernet"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fatfs"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/freertos"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/jsmn"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/log"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mdns"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mbedtls"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/mbedtls_port"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/newlib"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nvs_flash"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/openssl"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/soc"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/spi_flash"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/sdmmc"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/tcpip_adapter"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/ulp"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/vfs"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wear_levelling"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/xtensa-debug-module"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/coap"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/wpa_supplicant"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/expat"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/json"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/nghttp"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/lwip"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/variants/esp32"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/MPU"/>
-					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/RTCLib by NeiroN_ID1197"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/FS/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
-					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/ESP8266_SSD1306_ID562"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/atoms"/>
-					<Add directory="/Users/martin/Documents/GoTrack/src"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/DS1302"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/StopWatch"/>
-					<Add directory="/Users/martin/Documents/GoTrack/lib/WiFi/src"/>
-					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/FastLED_ID126"/>
-					<Add directory="/Users/martin/Documents/GoTrack/.piolibdeps/SparkFun MPU-9250 9 DOF IMU Breakout_ID944/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/ESP32/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/ESPmDNS/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SD_MMC/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/SimpleBLE/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/Update/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
-					<Add directory="/Users/martin/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src"/>
-					<Add directory="/Users/martin/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/include"/>
-					<Add directory="/Users/martin/.platformio/packages/toolchain-xtensa32/lib/gcc/xtensa-esp32-elf/5.2.0/include"/>
-					<Add directory="/Users/martin/.platformio/packages/toolchain-xtensa32/lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/components"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/build/include"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/components/arduino/cores/esp32"/>
+					<Add directory="/usr/local/esp-idf/components/aws_iot/include"/>
+					<Add directory="/usr/local/esp-idf/components/aws_iot/aws-iot-device-sdk-embedded-C/include"/>
+					<Add directory="/usr/local/esp-idf/components/app_trace/include"/>
+					<Add directory="/usr/local/esp-idf/components/app_update/include"/>
+					<Add directory="/usr/local/esp-idf/components/xtensa-debug-module/include"/>
+					<Add directory="/usr/local/esp-idf/components/bootloader_support/include"/>
+					<Add directory="/usr/local/esp-idf/components/bootloader_support/include_priv"/>
+					<Add directory="/usr/local/esp-idf/components/bt/include"/>
+					<Add directory="/usr/local/esp-idf/components/bt/bluedroid/api/include"/>
+					<Add directory="/usr/local/esp-idf/components/coap/port/include"/>
+					<Add directory="/usr/local/esp-idf/components/coap/port/include/coap"/>
+					<Add directory="/usr/local/esp-idf/components/coap/libcoap/include"/>
+					<Add directory="/usr/local/esp-idf/components/coap/libcoap/include/coap"/>
+					<Add directory="/usr/local/esp-idf/components/cxx/include"/>
+					<Add directory="/usr/local/esp-idf/components/driver/include"/>
+					<Add directory="/usr/local/esp-idf/components/driver/include/driver"/>
+					<Add directory="/usr/local/esp-idf/components/esp32/include"/>
+					<Add directory="/usr/local/esp-idf/components/ethernet/include"/>
+					<Add directory="/usr/local/esp-idf/components/expat/include/expat"/>
+					<Add directory="/usr/local/esp-idf/components/expat/port/include"/>
+					<Add directory="/usr/local/esp-idf/components/fatfs/src"/>
+					<Add directory="/usr/local/esp-idf/components/freertos/include"/>
+					<Add directory="/usr/local/esp-idf/components/jsmn/include"/>
+					<Add directory="/usr/local/esp-idf/components/json/include"/>
+					<Add directory="/usr/local/esp-idf/components/json/port/include"/>
+					<Add directory="/usr/local/esp-idf/components/libsodium/libsodium/src/libsodium/include"/>
+					<Add directory="/usr/local/esp-idf/components/libsodium/libsodium/src/libsodium/include/sodium"/>
+					<Add directory="/usr/local/esp-idf/components/log/include"/>
+					<Add directory="/usr/local/esp-idf/components/lwip/include/lwip"/>
+					<Add directory="/usr/local/esp-idf/components/lwip/include/lwip/port"/>
+					<Add directory="/usr/local/esp-idf/components/lwip/include/lwip/posix"/>
+					<Add directory="/usr/local/esp-idf/components/lwip/apps/ping"/>
+					<Add directory="/usr/local/esp-idf/components/mbedtls/port/include"/>
+					<Add directory="/usr/local/esp-idf/components/mbedtls/include"/>
+					<Add directory="/usr/local/esp-idf/components/mdns/include"/>
+					<Add directory="/usr/local/esp-idf/components/micro-ecc/micro-ecc"/>
+					<Add directory="/usr/local/esp-idf/components/newlib/include"/>
+					<Add directory="/usr/local/esp-idf/components/newlib/platform_include"/>
+					<Add directory="/usr/local/esp-idf/components/nghttp/include"/>
+					<Add directory="/usr/local/esp-idf/components/nghttp/port/include"/>
+					<Add directory="/usr/local/esp-idf/components/nvs_flash/include"/>
+					<Add directory="/usr/local/esp-idf/components/openssl/include"/>
+					<Add directory="/usr/local/esp-idf/components/openssl/include/internal"/>
+					<Add directory="/usr/local/esp-idf/components/openssl/include/platform"/>
+					<Add directory="/usr/local/esp-idf/components/openssl/include/openssl"/>
+					<Add directory="/usr/local/esp-idf/components/sdmmc/include"/>
+					<Add directory="/usr/local/esp-idf/components/spi_flash/include"/>
+					<Add directory="/usr/local/esp-idf/components/tcpip_adapter/include"/>
+					<Add directory="/usr/local/esp-idf/components/soc/esp32/include"/>
+					<Add directory="/usr/local/esp-idf/components/soc/include"/>
+					<Add directory="/usr/local/esp-idf/components/heap/include"/>
+					<Add directory="/usr/local/esp-idf/components/ulp/include"/>
+					<Add directory="/usr/local/esp-idf/components/vfs/include"/>
+					<Add directory="/usr/local/esp-idf/components/wear_levelling/include"/>
+					<Add directory="/usr/local/esp-idf/components/wpa_supplicant/include"/>
+					<Add directory="/usr/local/esp-idf/components/wpa_supplicant/port/include"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main/libs/atoms/include"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main/libs/MPU"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main/MPU/Logging"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main/libs/Logging"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main/libs/BMP280"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main/libs/SSD1306"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main/libs/FastLed"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/components/arduino/libraries/FS/src"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/components/arduino/libraries/SD/src"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/components/arduino/libraries/SPI/src"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/components/arduino/libraries/Wire/src"/>
+					<Add directory="/Users/martin/Documents/Gatt_server/main"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 GoTrack/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 GoTrack/fast"/>
+					<CompileFile command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="PLATFORMIO_CLEAN">
+			<Target title="SETTINGS">
 				<Option working_dir="/Users/martin/Documents/GoTrack/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 PLATFORMIO_CLEAN"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 SETTINGS"/>
+					<CompileFile command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="PLATFORMIO_UPLOAD">
+			<Target title="REINDEX_LIBS">
 				<Option working_dir="/Users/martin/Documents/GoTrack/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 PLATFORMIO_UPLOAD"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 REINDEX_LIBS"/>
+					<CompileFile command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BUILD">
+				<Option working_dir="/Users/martin/Documents/GoTrack/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 BUILD"/>
+					<CompileFile command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j4 -f &quot;/Users/martin/Documents/GoTrack/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/martin/Documents/GoTrack/src/.DS_Store">
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/.DS_Store">
 			<Option target="GoTrack"/>
 		</Unit>
-		<Unit filename="/Users/martin/Documents/GoTrack/src/Finder.h">
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/BLELib.cpp">
 			<Option target="GoTrack"/>
 		</Unit>
-		<Unit filename="/Users/martin/Documents/GoTrack/src/Frames.h">
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/BLELib.h">
 			<Option target="GoTrack"/>
 		</Unit>
-		<Unit filename="/Users/martin/Documents/GoTrack/src/Settings.h">
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/component.mk">
 			<Option target="GoTrack"/>
 		</Unit>
-		<Unit filename="/Users/martin/Documents/GoTrack/src/Symbols.h">
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/.DS_Store">
 			<Option target="GoTrack"/>
 		</Unit>
-		<Unit filename="/Users/martin/Documents/GoTrack/src/main.cpp">
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/BMP280/.github/ISSUE_TEMPLATE.md">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/BMP280/.github/PULL_REQUEST_TEMPLATE.md">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/BMP280/Adafruit_BMP280.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/BMP280/README.md">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/BMP280/examples/bmp280test/bmp280test.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/BMP280/library.properties">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/.gitignore">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/.library.json">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/FastLED.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/PORTING.md">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/README.md">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/bitswap.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/chipsets.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/color.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/colorpalettes.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/colorutils.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/controller.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/cpp_compat.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/dmx.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/docs/mainpage.dox">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/AnalogOutput/AnalogOutput.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/Blink/Blink.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/ColorPalette/ColorPalette.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/ColorTemperature/ColorTemperature.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/Cylon/Cylon.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/DemoReel100/DemoReel100.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/Fire2012/Fire2012.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/Fire2012WithPalette/Fire2012WithPalette.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/FirstLight/FirstLight.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/Multiple/ArrayOfLedArrays/ArrayOfLedArrays.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/Multiple/MirroringSample/MirroringSample.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/Multiple/MultiArrays/MultiArrays.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/Multiple/MultipleStripsInOneArray/MultipleStripsInOneArray.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/Multiple/OctoWS2811Demo/OctoWS2811Demo.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/Multiple/ParallelOutputDemo/ParallelOutputDemo.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/Noise/Noise.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/NoisePlayground/NoisePlayground.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/NoisePlusPalette/NoisePlusPalette.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/Pintest/Pintest.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/Ports/PJRCSpectrumAnalyzer/PJRCSpectrumAnalyzer.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/RGBCalibrate/RGBCalibrate.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/RGBSetDemo/RGBSetDemo.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/SmartMatrix/SmartMatrix.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/examples/XYMatrix/XYMatrix.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/extras/AppleII.s65">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/extras/FastLED6502.s65">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/extras/RainbowDemo.bin.zip">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/extras/RainbowDemo.s65">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/fastled_config.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/fastled_delay.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/fastled_progmem.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/fastpin.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/fastspi.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/fastspi_bitbang.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/fastspi_dma.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/fastspi_nop.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/fastspi_ref.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/fastspi_types.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/hsv2rgb.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/keywords.txt">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/led_sysdefs.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion/math8.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion/random8.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion/scale8.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/lib8tion/trig8.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/library.json">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/library.properties">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/noise.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/pixelset.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/pixeltypes.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/common/m0clockless.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/d21/clockless_arm_d21.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/d21/fastled_arm_d21.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/d21/fastpin_arm_d21.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/d21/led_sysdefs_arm_d21.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/k20/clockless_arm_k20.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/k20/clockless_block_arm_k20.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/k20/fastled_arm_k20.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/k20/fastpin_arm_k20.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/k20/fastspi_arm_k20.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/k20/led_sysdefs_arm_k20.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/k20/octows2811_controller.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/k20/smartmatrix_t3.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/kl26/clockless_arm_kl26.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/kl26/fastled_arm_kl26.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/kl26/fastpin_arm_kl26.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/kl26/fastspi_arm_kl26.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/kl26/led_sysdefs_arm_kl26.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/nrf51/clockless_arm_nrf51.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/nrf51/fastled_arm_nrf51.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/nrf51/fastpin_arm_nrf51.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/nrf51/fastspi_arm_nrf51.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/nrf51/led_sysdefs_arm_nrf51.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/sam/clockless_arm_sam.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/sam/clockless_block_arm_sam.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/sam/fastled_arm_sam.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/sam/fastpin_arm_sam.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/sam/fastspi_arm_sam.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/sam/led_sysdefs_arm_sam.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/stm32/clockless_arm_stm32.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/stm32/fastled_arm_stm32.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/stm32/fastpin_arm_stm32.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/arm/stm32/led_sysdefs_arm_stm32.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/avr/clockless_trinket.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/avr/fastled_avr.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/avr/fastpin_avr.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/avr/fastspi_avr.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/avr/led_sysdefs_avr.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/esp/8266/clockless_block_esp8266.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/esp/8266/clockless_esp8266.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/esp/8266/fastled_esp8266.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/esp/8266/fastpin_esp8266.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/platforms/esp/8266/led_sysdefs_esp8266.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/power_mgt.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/preview_changes.txt">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/release_notes.md">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/FastLED/wiring.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/Logging/FileLogSink.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/Logging/format.hpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/Logging/formatters.hpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/Logging/logging.hpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/MPU/MPU9250.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/MPU/quaternionFilters.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/.library.json">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/.travis.yml">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplay.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayFonts.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/OLEDDisplayUi.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/README.md">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/SH1106.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/SH1106Brzo.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/SH1106Spi.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/SH1106Wire.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/SSD1306.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/SSD1306Brzo.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/SSD1306Spi.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/SSD1306Wire.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/UPGRADE-3.0.md">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/examples/SSD1306ClockDemo/SSD1306ClockDemo.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/examples/SSD1306ClockDemo/images.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/examples/SSD1306DrawingDemo/SSD1306DrawingDemo.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/examples/SSD1306OTADemo/SSD1306OTADemo.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/examples/SSD1306SimpleDemo/SSD1306SimpleDemo.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/examples/SSD1306SimpleDemo/images.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/examples/SSD1306UiDemo/SSD1306UiDemo.ino">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/examples/SSD1306UiDemo/images.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/library.json">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/library.properties">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/resources/DemoFrame1.jpg">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/resources/DemoFrame2.jpg">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/resources/DemoFrame3.jpg">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/resources/DemoFrame4.jpg">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/resources/FontTool.png">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/resources/SPI_version.jpg">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/SSD1306/resources/xbmPreview.png">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/.gitignore">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/.travis.yml">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/CMakeLists.txt">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/README.md">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/CMakeLists.txt">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/avakar_packet/main.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/CMakeLists.txt">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/average/main.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/CMakeLists.txt">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/delegate/main.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/CMakeLists.txt">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/fixedpoint_numbers/main.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/CMakeLists.txt">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/packet/main.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/CMakeLists.txt">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/tagged/main.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/CMakeLists.txt">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/examples/value/main.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/atoms.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/bit/set_bits.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/communication/avakar.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/communication/packet.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/control/pid.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/functional/delegate.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/numeric/equality.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/numeric/fixed.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/numeric/rolling_average.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/numeric/value.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/numeric/vector.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/stdlib/algorithm.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/stdlib/type_traits.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/type/has_member.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/type/tagged.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/type/type_of_size.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/utility_dynamic.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/include/atoms/utility_static.h">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/tests/CMakeLists.txt">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/tests/bit/set_bits.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/tests/communication/avakar_packet.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/libs/atoms/tests/main.cpp">
+			<Option target="GoTrack"/>
+		</Unit>
+		<Unit filename="/Users/martin/Documents/Gatt_server/main/main.cpp">
 			<Option target="GoTrack"/>
 		</Unit>
 		<Unit filename="/Users/martin/Documents/GoTrack/CMakeLists.txt">
