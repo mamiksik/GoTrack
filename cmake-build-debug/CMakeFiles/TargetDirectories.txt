@@ -1,7 +1,0 @@
-/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/BUILD_AND_FLASH.dir
-/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/GoTrack.dir
-/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/SETTINGS.dir
-/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/REINDEX_LIBS.dir
-/Users/martin/Documents/GoTrack/cmake-build-debug/CMakeFiles/BUILD.dir
