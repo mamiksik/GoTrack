@@ -5,7 +5,7 @@
 #include <string.h>
 #include "BLELib.h"
 
-//uint16_t BLELib::hear_rate_handle_table[HRS_IDX_NB];
+uint16_t BLELib::hear_rate_handle_table[HRS_IDX_NB];
 
 void BLELib::gap_event_handler( esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *param )
 {
@@ -107,7 +107,7 @@ void BLELib::example_exec_write_event_env( prepare_type_env_t *prepare_write_env
 {
 	ESP_LOGI( GATTS_TABLE_TAG, "example_exec_write_event_env" );
 	if ( param->exec_write.exec_write_flag == ESP_GATT_PREP_WRITE_EXEC && prepare_write_env->prepare_buf ) {
-				esp_log_buffer_hex( GATTS_TABLE_TAG, prepare_write_env->prepare_buf, prepare_write_env->prepare_len );
+		esp_log_buffer_hex( GATTS_TABLE_TAG, prepare_write_env->prepare_buf, prepare_write_env->prepare_len );
 	} else {
 		ESP_LOGI( GATTS_TABLE_TAG, "ESP_GATT_PREP_WRITE_CANCEL" );
 	}
@@ -157,8 +157,8 @@ void BLELib::gatts_profile_event_handler( esp_gatts_cb_event_t event, esp_gatt_i
 			if ( !param->write.is_prep ) {
 				ESP_LOGI( GATTS_TABLE_TAG, "GATT_WRITE_EVT, handle = %d, value len = %d, value :", param->write.handle,
 				          param->write.len );
-						esp_log_buffer_hex( GATTS_TABLE_TAG, param->write.value, param->write.len );
-				if ( heart_rate_handle_table[ IDX_CHAR_CFG_A ] == param->write.handle && param->write.len == 2 ) {
+				esp_log_buffer_hex( GATTS_TABLE_TAG, param->write.value, param->write.len );
+				if ( BLELib::heart_rate_handle_table[ IDX_CHAR_CFG_A ] == param->write.handle && param->write.len == 2 ) {
 					uint16_t descr_value = param->write.value[ 1 ] << 8 | param->write.value[ 0 ];
 					if ( descr_value == 0x0001 ) {
 						ESP_LOGI( GATTS_TABLE_TAG, "notify enable" );
@@ -168,7 +168,7 @@ void BLELib::gatts_profile_event_handler( esp_gatts_cb_event_t event, esp_gatt_i
 						}
 						//the size of notify_data[] need less than MTU size
 						esp_ble_gatts_send_indicate( gatts_if, param->write.conn_id,
-						                             heart_rate_handle_table[ IDX_CHAR_VAL_A ],
+						                             BLELib::heart_rate_handle_table[ IDX_CHAR_VAL_A ],
 						                             sizeof( notify_data ), notify_data, false );
 					} else if ( descr_value == 0x0002 ) {
 						ESP_LOGI( GATTS_TABLE_TAG, "indicate enable" );
@@ -178,13 +178,13 @@ void BLELib::gatts_profile_event_handler( esp_gatts_cb_event_t event, esp_gatt_i
 						}
 						//the size of indicate_data[] need less than MTU size
 						esp_ble_gatts_send_indicate( gatts_if, param->write.conn_id,
-						                             heart_rate_handle_table[ IDX_CHAR_VAL_A ],
+						                             BLELib::heart_rate_handle_table[ IDX_CHAR_VAL_A ],
 						                             sizeof( indicate_data ), indicate_data, true );
 					} else if ( descr_value == 0x0000 ) {
 						ESP_LOGI( GATTS_TABLE_TAG, "notify/indicate disable " );
 					} else {
 						ESP_LOGE( GATTS_TABLE_TAG, "unknown descr value" );
-								esp_log_buffer_hex( GATTS_TABLE_TAG, param->write.value, param->write.len );
+						esp_log_buffer_hex( GATTS_TABLE_TAG, param->write.value, param->write.len );
 					}
 
 				}
@@ -219,7 +219,7 @@ void BLELib::gatts_profile_event_handler( esp_gatts_cb_event_t event, esp_gatt_i
 		}
 		case ESP_GATTS_CONNECT_EVT: {
 			ESP_LOGI( GATTS_TABLE_TAG, "ESP_GATTS_CONNECT_EVT, conn_id = %d", param->connect.conn_id );
-					esp_log_buffer_hex( GATTS_TABLE_TAG, param->connect.remote_bda, 6 );
+			esp_log_buffer_hex( GATTS_TABLE_TAG, param->connect.remote_bda, 6 );
 			esp_ble_conn_update_params_t conn_params = { 0 };
 			memcpy( conn_params.bda, param->connect.remote_bda, sizeof( esp_bd_addr_t ) );
 			/* For the IOS system, please reference the apple official documents about the ble connection parameters restrictions. */
@@ -246,8 +246,8 @@ void BLELib::gatts_profile_event_handler( esp_gatts_cb_event_t event, esp_gatt_i
 			} else {
 				ESP_LOGI( GATTS_TABLE_TAG, "create attribute table successfully, the number handle = %d\n",
 				          param->add_attr_tab.num_handle );
-				memcpy( heart_rate_handle_table, param->add_attr_tab.handles, sizeof( heart_rate_handle_table ) );
-				esp_ble_gatts_start_service( heart_rate_handle_table[ IDX_SVC ] );
+				memcpy( BLELib::heart_rate_handle_table, param->add_attr_tab.handles, sizeof( BLELib::heart_rate_handle_table ) );
+				esp_ble_gatts_start_service( BLELib::heart_rate_handle_table[ IDX_SVC ] );
 			}
 			break;
 		}
