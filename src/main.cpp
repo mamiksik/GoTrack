@@ -28,6 +28,9 @@
 
 
 SimpleBLE ble;
+#if !defined(CONFIG_BT_ENABLED) || !defined(CONFIG_BLUEDROID_ENABLED)
+#error Bluetooth is not enabled! Please run `make menuconfig` to and enable it
+#endif
 
 using namespace atoms;
 
@@ -316,6 +319,11 @@ void setup( )
 
 	ui.getUiState()->userData = & displayContext;
 	displayContext.newDataMPU = false;
+
+	ble.begin("ESP32 SimpleBLE");
+
+	String out = "BLE32 name: ";
+	ble.begin(out);
 
 }
 
