@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TEST_CCC
+#define TEST_CCC
+
 #include <cinttypes>
 #include <cstdio>
 #include <cctype>
@@ -351,3 +354,5 @@ private:
     bool _clip;
     int _width;
 };
+
+#endif

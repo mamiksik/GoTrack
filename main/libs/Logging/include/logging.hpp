@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef TEST_AAA
+#define TEST_AAA
+
 #include <vector>
 #include <iostream>
 #include <memory>
@@ -129,3 +133,5 @@ struct DummyClock {
 
 using LogSink = BaseLogSink< std::string >;
 using Logger = BaseLogger< std::string, DummyClock >;
+
+#endif

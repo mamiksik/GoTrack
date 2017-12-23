@@ -7,13 +7,13 @@ include(CMakeListsPrivate.txt)
 
 add_custom_target(
 		BUILD ALL
-		COMMAND make -j4
+		COMMAND make -j8
 		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 add_custom_target(
 		BUILD_AND_FLASH ALL
-		COMMAND make flash -j4
+		COMMAND make flash -j8
 		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 

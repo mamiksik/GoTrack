@@ -78,11 +78,11 @@ ESP = [
 LIBS = [
     join(THIS_DIR, "main", "libs", "atoms", "include"),
     join(THIS_DIR, "main", "libs", "MPU"),
-    join(THIS_DIR, "main", "MPU", "Logging"),
     join(THIS_DIR, "main", "libs", "Logging"),
     join(THIS_DIR, "main", "libs", "BMP280"),
     join(THIS_DIR, "main", "libs", "SSD1306"),
     join(THIS_DIR, "main", "libs", "FastLed"),
+    join(THIS_DIR, "main", "libs", "BLE", "src"),
 ]
 
 ARDUINO_LIBS = [

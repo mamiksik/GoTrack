@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef TEST_BBB
+#define TEST_BBB
+
 #include <string>
 #include <algorithm>
 #include <functional>
@@ -199,3 +203,5 @@ NumberFortmatter< T > number( T t ) {
 }
 
 using string = StringFormatter< std::string >;
+
+#endif
