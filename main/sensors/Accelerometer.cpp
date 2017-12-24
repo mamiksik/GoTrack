@@ -34,6 +34,7 @@ void Accelerometer::notify( )
 void Accelerometer::readValues( bool notify )
 {
 	_mpu.readAccelData( _mpu.accelCount );
+	_mpu.getAres();
 
 	_mpu.ax = ( float ) _mpu.accelCount[ 0 ] * _mpu.aRes; // - accelBias[0];
 	_mpu.ay = ( float ) _mpu.accelCount[ 1 ] * _mpu.aRes; // - accelBias[1];

@@ -1,4 +1,4 @@
-#pragma once
+//#pragma once
 
 #include "Arduino.h"
 #include "Wire.h"
@@ -15,6 +15,7 @@
 #include "logging.hpp"
 #include "Accelerometer.h"
 #include "DisplayLogSink.h"
+#include "ESPLogSink.h"
 
 
 //#include "SerialLogSink.h"
@@ -30,10 +31,13 @@ const uint8_t SPI_PINS[3] = { 5, 4, 18};
 const uint8_t SD_CS = 19;
 
 MPU9250 mpu;
-//SSD1306 display( 0x3c, WIRE_PINS[ 0 ], WIRE_PINS[ 1 ] );
+
+//Wire begin had to be commented out -> i2cInitFix(): Busy at initialization!
+SSD1306 display( 0x3c, WIRE_PINS[ 0 ], WIRE_PINS[ 1 ] );
 
 
 void setup(){
+	//Device address
 	pinMode(26, OUTPUT);
 	pinMode(26, LOW);
 
@@ -42,50 +46,54 @@ void setup(){
 
 	Logger logger;
 
-//	display.init();
-//	display.flipScreenVertically();
-//	display.setTextAlignment( TEXT_ALIGN_LEFT );
-//	display.setFont( ArialMT_Plain_10 );
-//
-//	logger.addSink( ALL, std::unique_ptr < LogSink >( new DisplayLogSink( display, 140, 64, 10 ) ) );
+	display.init();
+	display.flipScreenVertically();
+	display.setTextAlignment( TEXT_ALIGN_LEFT );
+	display.setFont( ArialMT_Plain_10 );
 
-//	logger.logInfo("Test", "Test000");
+	logger.addSink( ALL, std::unique_ptr < LogSink >( new DisplayLogSink( display, 140, 64, 10 ) ) );
+	logger.addSink( ALL, std::unique_ptr < LogSink >( new ESPLogSink( ) ) );
+
+	logger.logInfo("SETUP", "Init BLE: %", CONFIG_DEVICE_NAME);
 
 	BLEDevice::init( CONFIG_DEVICE_NAME );
 	BLEServer *pServer = BLEDevice::createServer();
-	BLEService *pService = pServer->createService(SERVICE_UUID);
 	pServer->setCallbacks( new ServerCallbacks() );
-
-//	logger.logInfo("Test", "Test");
-//	logger.logInfo("Test", "Test2");
-	ESP_LOGI("tag","+");
 
 	Common common = Common();
 	Storage storage = Storage(common);
 
+	logger.logInfo("SETUP", "Creating Accelerometer");
 	Accelerometer accelerometer = Accelerometer( pServer, storage, mpu);
-	mpu.MPU9250SelfTest( mpu.SelfTest );
-	ESP_LOGI("tag","+");
 
-	BLECharacteristic *pCharacteristic = pService->createCharacteristic(
-			CHARACTERISTIC_UUID,
-			BLECharacteristic::PROPERTY_READ |
-			BLECharacteristic::PROPERTY_WRITE |
-			BLECharacteristic::PROPERTY_NOTIFY
-	);
-
-	pCharacteristic->addDescriptor( new BLE2902() );
-	pCharacteristic->setValue("test");
-	pService->start();
-
+	logger.logInfo("SETUP", "Starting BLE advertising");
 	pServer->getAdvertising()->start();
-	ESP_LOGI("tag","Characteristic defined! Now you can read it in your phone!");
+
+//	ui.setTargetFPS( 23 );
+//
+//	ui.setActiveSymbol( activeSymbol );
+//	ui.setInactiveSymbol( inactiveSymbol );
+//
+//	ui.setIndicatorPosition( LEFT );
+//	ui.setIndicatorDirection( LEFT_RIGHT );
+//	ui.setFrameAnimation( SLIDE_UP );
+//
+//
+//	ui.setFrames( frames, frameCount );
+//	ui.setOverlays( overlays, overlaysCount );
+//
+//	ui.init();
+//	display.flipScreenVertically();
+//	ui.disableAutoTransition();
+//
+//	ui.getUiState()->userData = & displayContext;
+//	displayContext.newDataMPU = false;
+
 	for(;;){
-		ESP_LOGI("tag","----");
 		if ( ServerCallbacks::deviceConnected) {
-			logger.logInfo("Test", "---");
+			logger.logInfo("SETUP", "Connected");
 			accelerometer.readValues(true);
-			ESP_LOGI("tag","%f", accelerometer.getValue(Accelerometer::X));
+			logger.logInfo("SETUP", "Values: %", accelerometer.getValue(Accelerometer::X));
 		}
 		delay( 1000 );
 	}

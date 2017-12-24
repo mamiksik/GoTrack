@@ -5,6 +5,8 @@
 #pragma once
 
 
+//This class gathers clock, temperature and so on...
+//Not sure if it is good idea, but saves memory
 class Common
 {
 public:

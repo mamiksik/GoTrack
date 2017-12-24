@@ -6,6 +6,11 @@
 #CXXFLAGS = -std=gnu++14 -DATOMS_NO_EXCEPTION -Wp,-Os,-g3, -mlongcalls
 
 COMPONENT_ADD_INCLUDEDIRS := ./ \
+							./sensors \
+							./callbacks \
+							./sinks \
+							./display \
+							./IO \
 							libs/atoms/include \
 							libs/BLE/include \
 							libs/BMP280 \
@@ -14,6 +19,11 @@ COMPONENT_ADD_INCLUDEDIRS := ./ \
  							libs/SSD1306 \
 
 COMPONENT_SRCDIRS := 		./ \
+							./sensors \
+							./callbacks \
+							./sinks \
+							./display \
+							./IO \
 							libs/atoms/include \
 							libs/BLE/include \
 							libs/BMP280 \

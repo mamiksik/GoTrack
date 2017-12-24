@@ -37,21 +37,21 @@ public:
 				BLECharacteristic::PROPERTY_READ |
 				BLECharacteristic::PROPERTY_NOTIFY
 		);
-		_xCharacteristic->addDescriptor( new BLE2902() );
+//		_xCharacteristic->addDescriptor( new BLE2902() );
 
 		_yCharacteristic = _accelerometerService->createCharacteristic(
 				ACCELEROMETER_CHARACTERISTIC_UUID_Y,
 				BLECharacteristic::PROPERTY_READ |
 				BLECharacteristic::PROPERTY_NOTIFY
 		);
-		_yCharacteristic->addDescriptor( new BLE2902() );
+//		_yCharacteristic->addDescriptor( new BLE2902() );
 
 		_zCharacteristic = _accelerometerService->createCharacteristic(
 				ACCELEROMETER_CHARACTERISTIC_UUID_Z,
 				BLECharacteristic::PROPERTY_READ |
 				BLECharacteristic::PROPERTY_NOTIFY
 		);
-		_zCharacteristic->addDescriptor( new BLE2902() );
+//		_zCharacteristic->addDescriptor( new BLE2902() );
 
 		_accelerometerService->start();
 

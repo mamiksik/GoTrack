@@ -4,7 +4,6 @@ from os.path import basename, isdir, isfile, join, dirname, abspath
 from jinja2 import Template
 from jinja2 import Environment, FileSystemLoader
 
-#THIS_DIR = dirname(abspath(__file__))
 THIS_DIR = dirname(abspath(__file__))
 FRAMEWORK_DIR = "/usr/local/esp-idf"
 
@@ -77,12 +76,18 @@ ESP = [
 
 LIBS = [
     join(THIS_DIR, "main", "libs", "atoms", "include"),
-    join(THIS_DIR, "main", "libs", "MPU"),
-    join(THIS_DIR, "main", "libs", "Logging"),
+    join(THIS_DIR, "main", "libs", "MPU", "include"),
+    join(THIS_DIR, "main", "libs", "Logging", "include"),
     join(THIS_DIR, "main", "libs", "BMP280"),
     join(THIS_DIR, "main", "libs", "SSD1306"),
     join(THIS_DIR, "main", "libs", "FastLed"),
     join(THIS_DIR, "main", "libs", "BLE", "src"),
+    join(THIS_DIR, "main", "callbacks"),
+    join(THIS_DIR, "main", "sinks"),
+    join(THIS_DIR, "main", "IO"),
+    join(THIS_DIR, "main", "sensors"),
+    join(THIS_DIR, "main", "display"),
+    join(THIS_DIR, "main"),
 ]
 
 ARDUINO_LIBS = [
@@ -101,10 +106,6 @@ j2_env.get_template('CMakeListsPrivate.template.txt').stream(
     arduino_includes=ARDUINO_LIBS,
     libs_includes=LIBS
 ).dump("CMakeListsPrivate.txt")
-
-#print("\t**********************************************")
-#print("\t***   CMakeListsPrivate.txt - Generated!   ***")
-#print("\t**********************************************")
 
 print("\t+--------------------------------------------+")
 print("\t|     CMakeListsPrivate.txt - Generated      |")

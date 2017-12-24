@@ -3,7 +3,7 @@
 #ifndef TEST_DDD
 #define TEST_DDD
 
-//#include <logging.hpp>
+#include <logging.hpp>
 #include <string>
 #include <OLEDDisplay.h>
 #include <deque>
