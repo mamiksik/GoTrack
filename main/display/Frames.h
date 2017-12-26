@@ -1,6 +1,9 @@
 #pragma once
 
 #include <time.h>
+#include "OLEDDisplay.h"
+#include "OLEDDisplayUi.h"
+#include "WString.h"
 
 const int FLUSH_AT = 500;
 
@@ -26,27 +29,27 @@ struct DisplayContext
 
 void savedOverlay( OLEDDisplay *display, OLEDDisplayUiState *state )
 {
-	DisplayContext *context = reinterpret_cast<DisplayContext *>(state->userData);
-	display->setTextAlignment( TEXT_ALIGN_LEFT );
-	display->setFont( ArialMT_Plain_10 );
-
-	if(context->packetCount > FLUSH_AT - 100) {
-		display->drawString( 20, 0, "Saving...");
-	}
-
-	if(context->packetCount < 100) {
-		display->drawString( 20, 0, "Saved!");
-	}
+//	DisplayContext *context = reinterpret_cast<DisplayContext *>(state->userData);
+//	display->setTextAlignment( TEXT_ALIGN_LEFT );
+//	display->setFont( ArialMT_Plain_10 );
+//
+//	if(context->packetCount > FLUSH_AT - 100) {
+//		display->drawString( 20, 0, "Saving...");
+//	}
+//
+//	if(context->packetCount < 100) {
+//		display->drawString( 20, 0, "Saved!");
+//	}
 
 }
 
 void packetOverlay( OLEDDisplay *display, OLEDDisplayUiState *state )
 {
-	DisplayContext *context = reinterpret_cast<DisplayContext *>(state->userData);
-	display->setTextAlignment( TEXT_ALIGN_RIGHT );
-	display->setFont( ArialMT_Plain_10 );
-
-	display->drawString( 128, 0, "Packets: " + String(context->packetCount));
+//	DisplayContext *context = reinterpret_cast<DisplayContext *>(state->userData);
+//	display->setTextAlignment( TEXT_ALIGN_RIGHT );
+//	display->setFont( ArialMT_Plain_10 );
+//
+//	display->drawString( 128, 0, "Packets: " + String(context->packetCount));
 }
 
 

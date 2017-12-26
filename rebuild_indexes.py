@@ -80,7 +80,7 @@ LIBS = [
     join(THIS_DIR, "main", "libs", "Logging", "include"),
     join(THIS_DIR, "main", "libs", "BMP280"),
     join(THIS_DIR, "main", "libs", "SSD1306"),
-    join(THIS_DIR, "main", "libs", "FastLed"),
+    join(THIS_DIR, "main", "libs", "SmartLeds", "src"),
     join(THIS_DIR, "main", "libs", "BLE", "src"),
     join(THIS_DIR, "main", "callbacks"),
     join(THIS_DIR, "main", "sinks"),

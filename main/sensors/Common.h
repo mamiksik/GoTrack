@@ -1,17 +1,55 @@
-//
-// Created by Martin Miksik on 22/12/2017.
-//
-
 #pragma once
 
+#include <BLEServer.h>
+#include <Storage.h>
+#include <MPU9250.h>
+#include <UUID.h>
+#include <Adafruit_BMP280.h>
 
 //This class gathers clock, temperature and so on...
 //Not sure if it is good idea, but saves memory
-class Common
+class Common final
 {
 public:
-	int getTimestamp();
-//	float getTemperature();
-//	float setTemperature();
+	enum Value
+	{
+		PRESSURE,
+		TEMPERATURE
+	};
+
+
+	Common( BLEServer *bleServer, Storage & storage, Adafruit_BMP280 & bmp ) : _bleServer( bleServer ),
+	                                                                           _storage( storage ),
+	                                                                           _bmp( bmp )
+	{
+		_service = _bleServer->createService( COMMON_SERVICE_UUID );
+		_temperatureCharacteristic = _service->createCharacteristic(
+				COMMON_CHARACTERISTIC_UUID_TEMP,
+				BLECharacteristic::PROPERTY_NOTIFY
+		);
+
+		_pressureCharacteristic = _service->createCharacteristic(
+				COMMON_CHARACTERISTIC_UUID_PRESSU,
+				BLECharacteristic::PROPERTY_NOTIFY
+		);
+
+		_service->start();
+	}
+
+
+	void notify( );
+
+
+	float getValue( Value value );
+
+private:
+	BLEServer *_bleServer;
+	BLEService *_service;
+
+	BLECharacteristic *_temperatureCharacteristic;
+	BLECharacteristic *_pressureCharacteristic;
+
+	Storage & _storage;
+	Adafruit_BMP280 _bmp;
 };
 

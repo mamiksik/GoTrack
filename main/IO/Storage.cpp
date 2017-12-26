@@ -14,13 +14,16 @@ void Storage::addLoad( Storage::Tag tag, std::string data )
 
 void Storage::flush( )
 {
-	File file = SD.open("example.txt", FILE_APPEND);
-	while(!_load.empty()){
-		auto load = _load.front();
-		load += ", " + _common.getTimestamp();
-		file.print(load.c_str());
+	while(!_load.empty()) {
 		_load.pop();
 	}
+//	File file = SD.open("example.txt", FILE_APPEND);
+//	while(!_load.empty()){
+//		auto load = _load.front();
+//		load += ", " + _common.getTimestamp();
+//		file.print(load.c_str());
+//		_load.pop();
+//	}
 }
 
 
