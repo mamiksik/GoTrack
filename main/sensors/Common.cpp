@@ -5,16 +5,28 @@
 #include <sstream>
 #include "Common.h"
 
+
+void Common::readValues( bool notify )
+{
+	_pressure = _bmp.readPressure();
+	_temperature = _bmp.readTemperature();
+
+	if ( notify ) {
+		this->notify();
+	}
+}
+
+
 void Common::notify( )
 {
 	std::stringstream ss;
 
-	ss << _bmp.readPressure();
+	ss << _pressure;
 	_storage.addLoad( Storage::BMP_PRESSURE, ss.str() );
 	_pressureCharacteristic->setValue( ss.str() );
 
 	ss.flush();
-	ss << _bmp.readTemperature();
+	ss << _temperature;
 	_storage.addLoad( Storage::BMP_TEMPERATURE, ss.str() );
 	_temperatureCharacteristic->setValue( ss.str() );
 
@@ -25,14 +37,15 @@ void Common::notify( )
 
 float Common::getValue( Common::Value value )
 {
-	switch (value){
-		case Value::PRESSURE:{
-			return _bmp.readPressure();
+	switch ( value ) {
+		case Value::PRESSURE: {
+			return _pressure;
 			break;
 		}
-		case Value::TEMPERATURE:{
-			return _bmp.readTemperature();
+		case Value::TEMPERATURE: {
+			return _temperature;
 			break;
 		}
 	}
 }
+

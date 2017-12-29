@@ -52,7 +52,7 @@ public:
 			lines.pop_front();
 		}
 
-		_display.clear();
+//		_display.clear();
 
 		for ( uint8_t i = 0; i < rows && ( i + 1 ) <= lines.size(); i++ ) {
 			String msg = "";

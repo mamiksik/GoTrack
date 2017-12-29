@@ -1,6 +1,8 @@
 #pragma once
 
 
+#include <Tasks.h>
+
 class ServerCallbacks : public BLEServerCallbacks
 {
 public:
@@ -15,6 +17,7 @@ private:
 	void onConnect( BLEServer *pServer )
 	{
 		deviceConnected = true;
+		Tasks::BLEHandler(true);
 		digitalWrite(LED, HIGH);
 	};
 
@@ -22,6 +25,7 @@ private:
 	void onDisconnect( BLEServer *pServer )
 	{
 		deviceConnected = false;
+		Tasks::BLEHandler(false);
 		digitalWrite(LED, LOW);
 	}
 

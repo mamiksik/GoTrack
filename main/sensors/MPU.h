@@ -58,7 +58,7 @@ protected:
 		} else {
 //			_logger.logError( "", "MPU9250 failed to connected" );
 //			_logger.logDebug( "", "Wrong adress!" );
-			exit( 1 );
+//			exit( 1 );
 		}
 	}
 

@@ -5,7 +5,7 @@
 #include <queue>
 #include <SD.h>
 
-const uint8_t SD_CS = 19;
+const uint8_t SD_CS = 18;
 
 class Storage
 {

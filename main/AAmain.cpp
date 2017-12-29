@@ -5,18 +5,17 @@
 #include "SPI.h"
 
 #include <BLEDevice.h>
-#include <BLEUtils.h>
-#include <BLEServer.h>
+//#include <BLEUtils.h>
+//#include <BLEServer.h>
 #include <Gyroscope.h>
 #include <Magnetometer.h>
 #include <Adafruit_BMP280.h>
 #include <Common.h>
-#include <Frames.h>
-#include <examples/SSD1306UiDemo/images.h>
+//#include <examples/SSD1306UiDemo/images.h>
 #include <esp_heap_trace.h>
 #include "SSD1306.h"
-#include "OLEDDisplayUi.h"
-#include "MPU9250.h"
+//#include "OLEDDisplayUi.h"
+//#include "MPU9250.h"
 #include "sdkconfig.h"
 
 #include "ServerCallback.h"
@@ -24,7 +23,9 @@
 #include "logging.hpp"
 #include "Accelerometer.h"
 #include "DisplayLogSink.h"
-#include "ESPLogSink.h"
+#include "Tasks.h"
+
+
 
 
 //#include "SerialLogSink.h"
@@ -42,168 +43,11 @@
 
 #define SPI_PIN_SCK 5
 #define SPI_PIN_MISO 4
-#define SPI_PIN_MOSI 18
+#define SPI_PIN_MOSI 19
 
-#define BTN_PIN 32
 #define GND_PIN 26
 
 //const uint8_t SD_CS = 19;
-
-class MainC
-{
-
-private:
-
-public:
-	MainC( Gyroscope & gyroscope, Accelerometer & accelerometer, Common & common,
-	       OLEDDisplayUi & uiO, DisplayContext & displayContext, SSD1306 & display/*, Logger & logger */) : _gyroscope(
-			gyroscope ),
-	                                                                                                        _accelerometer(
-			                                                                                                        accelerometer ),
-	                                                                                                        _common(
-			                                                                                                        common ),
-	                                                                                                        _ui( uiO ),
-	                                                                                                        _displayContext(
-			                                                                                                        displayContext ),
-	                                                                                                        _display(
-			                                                                                                        display )/*,
-	                                                                                                  _logger( logger )*/
-	{
-	}
-
-
-public:
-
-	static MainC *getInstance( )
-	{
-		return MainC::_instance;
-	}
-
-
-	static void
-	createInstance( Gyroscope & gyroscope, Accelerometer & accelerometer, Common & common, OLEDDisplayUi & ui,
-	                DisplayContext & displayContext, SSD1306 & display/*, Logger& logger*/)
-	{
-		assert( !MainC::_instance );
-		MainC::_instance = new MainC( gyroscope, accelerometer, common, ui, displayContext, display/*, logger*/);
-	}
-
-
-	static void destroyInstance( )
-	{
-		assert( MainC::_instance );
-		delete MainC::_instance;
-	}
-
-
-	static void staticUpdate( void *pvParameter )
-	{
-		MainC::getInstance()->update();
-	}
-
-
-	static void staticUiUpdate( void *pvParameter )
-	{
-		MainC::getInstance()->uiUpdate();
-	}
-
-
-	void update( )
-	{
-		ESP_LOGE( "test", "UPDATE" );
-		while ( true ) {
-			if ( _mutex.try_lock() ) {
-
-				_accelerometer.readValues( true );
-				_gyroscope.readValues( true );
-//				_common.notify();
-				_mutex.unlock();
-			} else {
-				ESP_LOGI( "update", "Locked Update" );
-			}
-			delay( 100 );
-		}
-	}
-
-
-	void uiUpdate( )
-	{
-		_ui.setTargetFPS( 25 );
-		_ui.setActiveSymbol( activeSymbol );
-		_ui.setInactiveSymbol( inactiveSymbol );
-		_ui.setIndicatorPosition( LEFT );
-		_ui.setIndicatorDirection( LEFT_RIGHT );
-		_ui.setFrameAnimation( SLIDE_UP );
-
-
-		FrameCallback frames[] = { introFrame, gyroFrame, accFrame, magFrame, dataFrame };
-		uint8_t frameCount = 5;
-
-		OverlayCallback overlays[] = { packetOverlay, savedOverlay };
-		uint8_t overlaysCount = 2;
-
-		_ui.setFrames( frames, frameCount );
-		_ui.setOverlays( overlays, overlaysCount );
-		_ui.init();
-		_ui.disableAutoTransition();
-		_display.flipScreenVertically();
-		_ui.getUiState()->userData = & _displayContext;
-		_displayContext.newDataMPU = false;
-
-		ESP_LOGE( "test", "UI Update" );
-		while ( true ) {
-			_displayContext.newDataMPU = true;
-			if ( _mutex.try_lock() ) {
-
-				//In next version Display should be on second physical wire so update could go in parallel
-				_ui.update();
-
-				_displayContext.gyroX = _gyroscope.getValue( Gyroscope::X );
-				_displayContext.gyroY = _gyroscope.getValue( Gyroscope::Y );
-				_displayContext.gyroZ = _gyroscope.getValue( Gyroscope::Z );
-
-				_displayContext.accX = _accelerometer.getValue( Accelerometer::X );
-				_displayContext.accY = _accelerometer.getValue( Accelerometer::Y );
-				_displayContext.accZ = _accelerometer.getValue( Accelerometer::Z );
-
-				//displayContext.magX = mpu.mx;
-				//displayContext.magY = mpu.my;
-				//displayContext.magZ = mpu.mz;
-
-				_displayContext.temp = _common.getValue( Common::TEMPERATURE );
-
-				_mutex.unlock();
-			} else {
-				ESP_LOGI( "update", "Locked UI" );
-			}
-			if ( digitalRead( BTN_PIN ) == 1 ) {
-				_ui.nextFrame();
-			}
-
-			delay( 10 );
-		}
-	}
-
-
-	Gyroscope & _gyroscope;
-	Accelerometer & _accelerometer;
-	Common & _common;
-
-	OLEDDisplayUi & _ui;
-	DisplayContext & _displayContext;
-	SSD1306 & _display;
-
-/*	Logger& _logger;*/
-
-	mutable std::mutex _mutex;
-
-	static MainC *_instance;
-
-};
-
-MainC *MainC::_instance = nullptr;
-
-
 void setup( )
 {
 	pinMode( GND_PIN, OUTPUT );
@@ -215,6 +59,7 @@ void setup( )
 
 	SPI.begin( SPI_PIN_SCK, SPI_PIN_MISO, SPI_PIN_MOSI );
 	SD.begin( SD_CS, SPI );
+	ESP_LOGE('test', "%i", SD.cardType());
 
 	SSD1306Wire display = SSD1306Wire( 0x3c, WIRE_PIN_SDA, WIRE_PIN_SCL );
 	OLEDDisplayUi ui = OLEDDisplayUi( & display );
@@ -234,41 +79,74 @@ void setup( )
 
 	Storage storage = Storage();
 
+	Adafruit_BMP280 bmp;
+	bmp.begin(0x76);
+
 	MPU9250 mpu;
 	mpu.initMPU9250();
 	mpu.calibrateMPU9250( mpu.gyroBias, mpu.accelBias );
+	ESP_LOGE("test", "test: %f", bmp.readTemperature());
 	// Must be called before updating quaternions!
 	// mpu.updateTime(); ???
 
-	Adafruit_BMP280 bmp;
-	bmp.begin();
+//	byte c = mpu.readByte( MPU9250_ADDRESS, WHO_AM_I_MPU9250 );
+//	if ( c == 0x71 ) {
+//
+//	} else {
+//		exit( 1 );
+//	}
+
+	mpu.initAK8963(mpu.magCalibration);
+
+	display.drawProgressBar(10, 50, 100, 5, 00);
+	display.display();
+	delay(100);
 
 	logger.logInfo( "SETUP", "Creating Accelerometer" );
 	Accelerometer accelerometer = Accelerometer( pServer, storage, mpu );
 
+	display.drawProgressBar(10, 50, 100, 5, 20);
+	display.display();
+	delay(100);
+
 	logger.logInfo( "SETUP", "Creating gyroscope" );
 	Gyroscope gyroscope = Gyroscope( pServer, storage, mpu );
+
+	display.drawProgressBar(10, 50, 100, 5, 40);
+	display.display();
+	delay(100);
 
 	logger.logInfo( "SETUP", "Creating magnetometer" );
 	Magnetometer magnetometer = Magnetometer( pServer, storage, mpu );
 
+	display.drawProgressBar(10, 50, 100, 5, 60);
+	display.display();
+	delay(100);
+
 	logger.logInfo( "SETUP", "Creating common" );
 	Common common = Common( pServer, storage, bmp );
 
-	display.clear();
+
 	DisplayContext d{ };
+	Tasks::createInstance( gyroscope, accelerometer, common, ui, d, display/*, logger*/);
 
-	MainC::createInstance( gyroscope, accelerometer, common, ui, d, display/*, logger*/);
+	display.drawProgressBar(10, 50, 100, 5, 80);
+	display.display();
+	delay(100);
 
+	TaskHandle_t tasks[2] = {};
 
-	xTaskCreate( & MainC::staticUpdate, "Update", 4048, NULL, 1, NULL );
-	xTaskCreate( & MainC::staticUiUpdate, "UiUpdate", 4048, NULL, 2, NULL );
+	xTaskCreate( & Tasks::staticUpdate, "Update", 4048, NULL, 1, &tasks[0] );
+	xTaskCreate( & Tasks::staticUiUpdate, "UiUpdate", 4048, NULL, 2, &tasks[1] );
 
+	pServer->getAdvertising()->start();
 
 	for ( ;; ) {
 		uint32_t free = esp_get_free_heap_size();
 		ESP_LOGI( "core", "Free: %i", free );
 		delay( 5000 );
+//		vTaskDelete(tasks[0]);
+//		vTaskDelete(tasks[1]);
 	}
 };
 
@@ -277,18 +155,3 @@ void loop( )
 {
 
 }
-
-//
-//#if CONFIG_FREERTOS_UNICORE
-//#define ARDUINO_RUNNING_CORE 0
-//#else
-//#define ARDUINO_RUNNING_CORE 1
-//#endif
-//
-//
-//extern "C" void app_main( ) {
-//	initArduino();
-//	micros();
-////	setup();
-//	xTaskCreatePinnedToCore(setup, "loopTask", 8192, NULL, 1, NULL, ARDUINO_RUNNING_CORE);
-//}

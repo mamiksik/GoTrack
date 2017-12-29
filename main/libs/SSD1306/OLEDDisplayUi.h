@@ -102,6 +102,7 @@ class OLEDDisplayUi {
   private:
     OLEDDisplay             *display;
 
+
     // Symbols for the Indicator
     IndicatorPosition   indicatorPosition         = BOTTOM;
     IndicatorDirection  indicatorDirection        = LEFT_RIGHT;

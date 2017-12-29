@@ -37,12 +37,18 @@ public:
 	}
 
 
+	void readValues( bool notify  );
+
+
 	void notify( );
 
 
 	float getValue( Value value );
 
 private:
+	float _pressure;
+	float _temperature;
+
 	BLEServer *_bleServer;
 	BLEService *_service;
 
