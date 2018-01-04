@@ -6,8 +6,6 @@
 #include "OLEDDisplayUi.h"
 #include "WString.h"
 
-const int FLUSH_AT = 500;
-
 struct DisplayContext
 {
 	bool newDataMPU;
@@ -26,14 +24,14 @@ struct DisplayContext
 
 	float temp;
 	float pressure;
-	int packetCount;
 
+	bool session;
 	bool BLEConnected;
 };
 
-extern void savedOverlay( OLEDDisplay *display, OLEDDisplayUiState *state );
+extern void sessionOverlay( OLEDDisplay *display, OLEDDisplayUiState *state );
 
-extern void packetOverlay( OLEDDisplay *display, OLEDDisplayUiState *state );
+extern void bleOverlay( OLEDDisplay *display, OLEDDisplayUiState *state );
 
 
 extern void introFrame( OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int16_t y );

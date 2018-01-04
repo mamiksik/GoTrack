@@ -5,7 +5,7 @@
 #include <queue>
 #include <SD.h>
 
-const uint8_t SD_CS = 18;
+#define SD_CS 18
 
 class Storage
 {
@@ -27,9 +27,7 @@ public:
 		BMP_TEMPERATURE,
 	};
 
-	explicit Storage(){
-
-	};
+	Storage();
 
 	void addLoad(Tag tag, std::string data);
 	void flush();

@@ -4,6 +4,8 @@
 
 #include "Gyroscope.h"
 #include <sstream>
+//#include <base64.h>
+#include <base64lib.h>
 
 
 void Gyroscope::readValues( bool notify )
@@ -40,6 +42,18 @@ void Gyroscope::notify( )
 	ss << _mpu.gz;
 	_storage.addLoad(Storage::GYRO_Z, ss.str());
 	_zCharacteristic->setValue(ss.str());
+
+//	ESP_LOGE("test2", "Value");
+//	ESP_LOGE("test", "Value: %s", _enableCharacteristic->getValue());
+//	ESP_LOGE("test", "Value: %i", _enableCharacteristic->getValue());
+
+//	if (base64_decode(_enableCharacteristic->getValue().c_str()) != "0x01"){
+//		digitalWrite(23, LOW);
+//		return;
+//	}
+
+	pinMode(23, OUTPUT);
+	digitalWrite(23, HIGH);
 
 	_xCharacteristic->notify();
 	_yCharacteristic->notify();

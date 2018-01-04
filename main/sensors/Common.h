@@ -5,6 +5,7 @@
 #include <MPU9250.h>
 #include <UUID.h>
 #include <Adafruit_BMP280.h>
+#include <BLE2902.h>
 
 //This class gathers clock, temperature and so on...
 //Not sure if it is good idea, but saves memory
@@ -32,6 +33,9 @@ public:
 				COMMON_CHARACTERISTIC_UUID_PRESSU,
 				BLECharacteristic::PROPERTY_NOTIFY
 		);
+
+		_temperatureCharacteristic->addDescriptor(new BLE2902());
+		_pressureCharacteristic->addDescriptor(new BLE2902());
 
 		_service->start();
 	}

@@ -3,33 +3,34 @@
 
 #include <Tasks.h>
 
-class ServerCallbacks : public BLEServerCallbacks
+#define LED_PIN 23
+
+class ServerCallbacks final : public BLEServerCallbacks
 {
 public:
 	ServerCallbacks( )
 	{
-		pinMode(LED, OUTPUT);
-		digitalWrite(LED, LOW);
+		pinMode(LED_PIN, OUTPUT);
+		digitalWrite(LED_PIN, LOW);
 	};
 
 	static bool deviceConnected;
 private:
-	void onConnect( BLEServer *pServer )
+	void onConnect( BLEServer *pServer ) override
 	{
 		deviceConnected = true;
 		Tasks::BLEHandler(true);
-		digitalWrite(LED, HIGH);
+		digitalWrite(LED_PIN, HIGH);
 	};
 
 
-	void onDisconnect( BLEServer *pServer )
+	void onDisconnect( BLEServer *pServer ) override
 	{
 		deviceConnected = false;
 		Tasks::BLEHandler(false);
-		digitalWrite(LED, LOW);
+		digitalWrite(LED_PIN, LOW);
 	}
 
-	const uint8_t LED = 23;
 };
 
 bool ServerCallbacks::deviceConnected = false;

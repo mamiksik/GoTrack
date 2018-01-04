@@ -26,17 +26,6 @@
 #include "Tasks.h"
 
 
-
-
-//#include "SerialLogSink.h"
-
-
-
-//const uint8_t SERIAL_PINS[2] = { 16, 4 };
-//const uint8_t WIRE_PINS[2] = { 25, 33 };
-//const uint8_t SPI_PINS[3] = { 5, 4, 18 };
-//const uint8_t BTN = 32;
-
 #define WIRE_PIN_SDA 25
 #define WIRE_PIN_SCL 33
 #define WIRE_FREQ 700000
@@ -47,7 +36,6 @@
 
 #define GND_PIN 26
 
-//const uint8_t SD_CS = 19;
 void setup( )
 {
 	pinMode( GND_PIN, OUTPUT );
@@ -128,7 +116,7 @@ void setup( )
 
 
 	DisplayContext d{ };
-	Tasks::createInstance( gyroscope, accelerometer, common, ui, d, display/*, logger*/);
+	Tasks::createInstance( gyroscope, accelerometer, magnetometer, common, ui, d, display/*, logger*/);
 
 	display.drawProgressBar(10, 50, 100, 5, 80);
 	display.display();
@@ -136,8 +124,8 @@ void setup( )
 
 	TaskHandle_t tasks[2] = {};
 
-	xTaskCreate( & Tasks::staticUpdate, "Update", 4048, NULL, 1, &tasks[0] );
-	xTaskCreate( & Tasks::staticUiUpdate, "UiUpdate", 4048, NULL, 2, &tasks[1] );
+	xTaskCreate( & Tasks::staticUpdate, "Update", 4048, nullptr, 1, &tasks[0] );
+	xTaskCreate( & Tasks::staticUiUpdate, "UiUpdate", 4048, nullptr, 2, &tasks[1] );
 
 	pServer->getAdvertising()->start();
 

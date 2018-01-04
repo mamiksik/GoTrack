@@ -82,6 +82,7 @@ LIBS = [
     join(THIS_DIR, "main", "libs", "SSD1306"),
     join(THIS_DIR, "main", "libs", "SmartLeds", "src"),
     join(THIS_DIR, "main", "libs", "BLE", "src"),
+    join(THIS_DIR, "main", "libs", "base64"),
     join(THIS_DIR, "main", "callbacks"),
     join(THIS_DIR, "main", "sinks"),
     join(THIS_DIR, "main", "IO"),

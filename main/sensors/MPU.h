@@ -6,6 +6,7 @@
 #include <MPU9250.h>
 #include <Arduino.h>
 #include <mutex>
+#include <BLE2902.h>
 #include "UUID.h"
 
 class MPU
@@ -37,18 +38,35 @@ protected:
 		_service = _bleServer->createService( serviceUUID );
 		_xCharacteristic = _service->createCharacteristic(
 				xUUID,
-				BLECharacteristic::PROPERTY_NOTIFY
+				BLECharacteristic::PROPERTY_READ   |
+				BLECharacteristic::PROPERTY_WRITE  |
+				BLECharacteristic::PROPERTY_NOTIFY |
+				BLECharacteristic::PROPERTY_INDICATE
 		);
+
+		_xCharacteristic->addDescriptor(new BLE2902());
 
 		_yCharacteristic = _service->createCharacteristic(
 				yUUID,
-				BLECharacteristic::PROPERTY_NOTIFY
+				BLECharacteristic::PROPERTY_READ   |
+				BLECharacteristic::PROPERTY_WRITE  |
+				BLECharacteristic::PROPERTY_NOTIFY |
+				BLECharacteristic::PROPERTY_INDICATE
 		);
+
+		_yCharacteristic->addDescriptor(new BLE2902());
+		_xCharacteristic->setNotifyProperty(true);
 
 		_zCharacteristic = _service->createCharacteristic(
 				zUUID,
-				BLECharacteristic::PROPERTY_NOTIFY
+				BLECharacteristic::PROPERTY_READ   |
+				BLECharacteristic::PROPERTY_WRITE  |
+				BLECharacteristic::PROPERTY_NOTIFY |
+				BLECharacteristic::PROPERTY_INDICATE
 		);
+
+
+		_zCharacteristic->addDescriptor(new BLE2902());
 
 		_service->start();
 
@@ -61,7 +79,6 @@ protected:
 //			exit( 1 );
 		}
 	}
-
 
 	BLEServer *_bleServer;
 	BLEService *_service;

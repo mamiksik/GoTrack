@@ -18,6 +18,7 @@ COMPONENT_ADD_INCLUDEDIRS := ./ \
  							libs/MPU/include \
  							libs/SSD1306 \
  							libs/SmartLeds/src \
+ 							libs/base64 \
 
 COMPONENT_SRCDIRS := 		./ \
 							./sensors \
@@ -32,3 +33,4 @@ COMPONENT_SRCDIRS := 		./ \
  							libs/MPU/include \
  							libs/SSD1306 \
  							libs/SmartLeds/src \
+ 							libs/base64 \

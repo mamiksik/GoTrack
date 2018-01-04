@@ -6,20 +6,20 @@
 #include "Frames.h"
 
 
-void savedOverlay( OLEDDisplay *display, OLEDDisplayUiState *state )
+void sessionOverlay( OLEDDisplay *display, OLEDDisplayUiState *state )
 {
-//	DisplayContext *context = reinterpret_cast<DisplayContext *>(state->userData);
-//	display->setTextAlignment( TEXT_ALIGN_LEFT );
-//	display->setFont( ArialMT_Plain_10 );
-//
-//	if(context->packetCount > FLUSH_AT - 100) {
-//		display->drawString( 20, 0, "Saving...");
-//	}
-//
-//	if(context->packetCount < 100) {
-//		display->drawString( 20, 0, "Saved!");
-//	}
+	DisplayContext *context = reinterpret_cast<DisplayContext *>(state->userData);
+	display->setTextAlignment( TEXT_ALIGN_LEFT );
+	display->setFont( ArialMT_Plain_10 );
 
+	display->setTextAlignment( TEXT_ALIGN_RIGHT );
+	display->setFont( ArialMT_Plain_10 );
+	display->drawString( 20, 0, "SE:");
+	display->drawCircle(24, 6, 3);
+
+	if ( context->session ) {
+		display->fillCircle(24, 6, 3);
+	}
 }
 
 
@@ -42,7 +42,7 @@ void savedOverlay( OLEDDisplay *display, OLEDDisplayUiState *state )
 //};
 
 
-void packetOverlay( OLEDDisplay *display, OLEDDisplayUiState *state )
+void bleOverlay( OLEDDisplay *display, OLEDDisplayUiState *state )
 {
 	DisplayContext *context = reinterpret_cast<DisplayContext *>(state->userData);
 

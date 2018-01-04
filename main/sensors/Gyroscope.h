@@ -5,6 +5,7 @@
 #include <Storage.h>
 #include <MPU9250.h>
 #include "UUID.h"
+#define gyro
 #include "MPU.h"
 
 class Gyroscope final : public MPU
@@ -17,7 +18,6 @@ public:
 	                                                                           GYRO_CHARACTERISTIC_UUID_Z )
 	{
 	}
-
 
 	void readValues( bool notify = false );
 
