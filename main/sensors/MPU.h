@@ -28,6 +28,8 @@ public:
 
 	virtual float getValue( Axes axe ) { };
 
+	virtual float setValues(float x, float y, float  z) { };
+
 protected:
 	MPU( BLEServer *bleServer, Storage & storage, MPU9250 & mpu, std::string serviceUUID, std::string xUUID,
 	     std::string yUUID, std::string zUUID ) : _bleServer( bleServer ),
